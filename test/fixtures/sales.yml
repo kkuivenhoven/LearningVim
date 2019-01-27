@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  region: MyString
+  country: MyString
+  item_type: MyString
+  sales_channel: MyString
+  order_priority: MyString
+  order_date: 2019-01-27
+  order_id: 1
+  ship_date: 2019-01-27
+  units_sold: 1
+  unit_price: 1.5
+  unit_cost: 1.5
+  total_revenue: 1.5
+  total_cost: 1.5
+  total_profit: 1.5
+
+two:
+  region: MyString
+  country: MyString
+  item_type: MyString
+  sales_channel: MyString
+  order_priority: MyString
+  order_date: 2019-01-27
+  order_id: 1
+  ship_date: 2019-01-27
+  units_sold: 1
+  unit_price: 1.5
+  unit_cost: 1.5
+  total_revenue: 1.5
+  total_cost: 1.5
+  total_profit: 1.5

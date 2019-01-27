@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'static_pages/about'
+
   root controller: :static_pages, action: :home
 
   get 'static_pages/help'
