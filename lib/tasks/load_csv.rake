@@ -1,5 +1,4 @@
 require 'csv'
-require 'Date'
 namespace :load_csv do
 
   desc "TODO"
@@ -13,9 +12,9 @@ namespace :load_csv do
 			s.item_type = row['item_type']
 			s.sales_channel = row['sales_channel']
 			s.order_priority = row['order_priority']
-			s.order_date = Date.strptime(row['order_date'], "%m/%d/%Y")
+			s.order_date = Time.strptime(row['order_date'], "%m/%d/%Y")
 			s.order_id = row['order_id']
-			s.ship_date = Date.strptime(row['ship_date'], "%m/%d/%Y")
+			s.ship_date = Time.strptime(row['ship_date'], "%m/%d/%Y")
 			s.units_sold = row['units_sold']
 			s.unit_price = row['unit_price']
 			s.unit_cost = row['unit_cost']
