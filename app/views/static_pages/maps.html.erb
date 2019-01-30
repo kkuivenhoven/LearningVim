@@ -1,0 +1,96 @@
+<h1>StaticPages#maps</h1>
+<p>Find me in app/views/static_pages/maps.html.erb</p>
+
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawSeriesChart);
+
+    function drawSeriesChart() {
+        var countries = '<%= @countries %>';
+        var c_split = countries.split(', &');
+        for(var i=0; i < c_split.length; i++){
+          c_split[i] = c_split[i].split('=&gt;');
+          c_split[i][0] = c_split[i][0].replace("quot;","");
+          c_split[i][0] = c_split[i][0].replace("&quot;","");
+          // c_split[i][1] = toString((c_split[i][1] * 10));
+          // console.log("c_split[" + i + "]: " + c_split[i]);
+        }
+        c_split[0][0] = c_split[0][0].replace("{&","");
+				// var columnNames = ["ID", "SalesPerCountry", "TotalProfit"];
+				var columnNames = [];
+				columnNames.push("ID");
+				columnNames.push("SalesPerCountry");
+				columnNames.push("TotalProfit");
+				console.log("typeof(columnNames): " + typeof(columnNames));
+				// var columnNames = ['C', 'S', 'T'];
+				// var emptyArray = [];
+				// c_split.splice(1,0,columnNames);
+
+				for(var i = 0; i < c_split.length; i++){
+					var tmp = c_split[i][1];				
+					tmp = tmp.replace('[', "");
+					tmp = tmp.replace(']', "");
+					tmp = tmp.split(', ');
+					c_split[i][1] = tmp[0];
+					c_split[i][2] = tmp[1];
+				}
+				// var juntos = columnNames + c_split;
+				var juntos = columnNames.concat(c_split);
+        /*console.log("c_split[0]: " + c_split[0]);
+        console.log("c_split[1]: " + c_split[1]);
+        console.log("c_split[100]: " + c_split[100]);
+        console.log("typeof(c_split[0][1]): " + typeof(c_split[0][1]));
+        console.log("typeof(c_split[0][1]*10): " + typeof(c_split[0][1]*10));*/
+				console.log("typeof(c_split[0][0]): " + typeof(c_split[0][0]));
+				console.log("c_split[0][0]: " + c_split[0][0]);
+				console.log("typeof(c_split[0][1]): " + typeof(c_split[0][1]));
+				console.log("c_split[0][1]: " + c_split[0][1]);
+				console.log("c_split[0][2]: " + c_split[0][2]);
+				console.log("juntos[0][0]: " + juntos[0][0]);
+				console.log("juntos[0][1]: " + juntos[0][1]);
+				console.log("juntos[0][2]: " + juntos[0][2]);
+				console.log("juntos[1][0]: " + juntos[1][0]);
+				console.log("juntos: " + juntos);
+				console.log("typeof(juntos[0]): " + typeof(juntos[0]));
+
+
+      // var data = google.visualization.arrayToDataTable(c_split);
+      var data = google.visualization.arrayToDataTable(juntos);
+				/*['ID', 'Sales Per Country', 'Total Profit'],
+				['Afghanistan', 10, 23084],
+				['United States of America', 50, 23094823094]
+			]);*/
+        /*['ID', 'Life Expectancy', 'Fertility Rate', 'Region',     'Population'],
+        ['CAN',    80.66,              1.67,      'North America',  33739900],
+        ['DEU',    79.84,              1.36,      'Europe',         81902307],
+        ['DNK',    78.6,               1.84,      'Europe',         5523095],
+        ['EGY',    72.73,              2.78,      'Middle East',    79716203],
+        ['GBR',    80.05,              2,         'Europe',         61801570],
+        ['IRN',    72.49,              1.7,       'Middle East',    73137148],
+        ['IRQ',    68.09,              4.77,      'Middle East',    31090763],
+        ['ISR',    81.55,              2.96,      'Middle East',    7485600],
+        ['RUS',    68.6,               1.54,      'Europe',         141850000],
+        ['USA',    78.09,              2.05,      'North America',  307007000]
+      ]);*/
+		
+
+      var options = {
+        title: 'Correlation between life expectancy, fertility rate ' +
+               'and population of some world countries (2010)',
+        hAxis: {title: 'Life Expectancy'},
+        vAxis: {title: 'Fertility Rate'},
+        bubble: {textStyle: {fontSize: 11}}
+      };
+
+      var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
+      chart.draw(data, options);
+    }
+    </script>
+  </head>
+  <body>
+    <div id="series_chart_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

@@ -8,7 +8,30 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
-  </body>
+	<nav class="navbar navbar-default navbar-expand-sm">
+		Data based on 10,000 Sales Records
+		&nbsp;&nbsp;&nbsp;<%= link_to 'About', static_pages_about_path, method: :get %>
+		&nbsp;&nbsp;&nbsp;<%= link_to 'Home', root_path, method: :get %>
+		&nbsp;&nbsp;&nbsp;<%= link_to 'Help', static_pages_help_path, method: :get %>
+		&nbsp;&nbsp;&nbsp;<%= link_to 'Map', static_pages_maps_path, method: :get %>
+	</nav>
+
+	<div class="center jumbotron jumbotron-fluid">
+		<div class="container">
+			<h2><%= yield(:title) %></h2><br>
+			<p><%= yield(:p) %></p>
+		</div>
+	</div>
+
+	<body>
+		<div class="container">
+			<%= yield %>
+			<br><%= debug(params) if Rails.env.development? %>
+		</div>
+	</tbody>
+
+	<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>
+	<div class="footer navbar-fixed-bottom">
+	</div>
+
 </html>

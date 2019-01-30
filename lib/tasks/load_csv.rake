@@ -3,7 +3,7 @@ namespace :load_csv do
 
   desc "TODO"
   task :import_sales => :environment do
-		csv_text = File.read(Rails.root.join('1000SalesRecords.csv'))
+		csv_text = File.read(Rails.root.join('10000SalesRecords.csv'))
 		csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 		csv.each do |row|
 			s = Sale.new
