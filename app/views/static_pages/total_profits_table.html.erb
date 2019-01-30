@@ -9,7 +9,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<% @countries.each do |key, value| %>
+		<% @countries.sort.each do |key, value| %>
 				<tr>
 					<th><%= key %></th>
 					<th><%= value[0] %></th>
