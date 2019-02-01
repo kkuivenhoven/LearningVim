@@ -61,4 +61,9 @@ class StaticPagesController < ApplicationController
 		end
 	end
 
+	def sales_channel_info
+		@sales_channels = Sale.group(:sales_channel).count
+		@regions = Sale.group(:region).count
+	end
+
 end
