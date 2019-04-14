@@ -9,19 +9,15 @@
   </head>
 
 	<nav class="navbar navbar-default navbar-expand-sm">
-		Data based on 10,000 Sales Records
-		&nbsp;&nbsp;&nbsp;<%= link_to 'About', static_pages_about_path, method: :get %>
-		&nbsp;&nbsp;&nbsp;<%= link_to 'Home', root_path, method: :get %>
-		&nbsp;&nbsp;&nbsp;<%= link_to 'Help', static_pages_help_path, method: :get %>
-		&nbsp;&nbsp;&nbsp;<%= link_to 'Map', static_pages_maps_path, method: :get %>
-		&nbsp;&nbsp;&nbsp;<%= link_to 'Total Profits', static_pages_total_profits_table_path, method: :get %>
-		&nbsp;&nbsp;&nbsp;<%= link_to 'Sales Channels', static_pages_sales_channel_info_path, method: :get %>
 	</nav>
 
 	<div class="center jumbotron jumbotron-fluid">
 		<div class="container">
 			<h2><%= yield(:title) %></h2><br>
 			<p><%= yield(:p) %></p>
+
+			<p class="notice"><%= notice %></p>
+			<p class="alert"><%= alert %></p>
 		</div>
 	</div>
 

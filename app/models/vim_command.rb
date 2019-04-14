@@ -1,0 +1,2 @@
+class VimCommand < ApplicationRecord
+end

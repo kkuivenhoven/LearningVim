@@ -10,25 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190127203046) do
+ActiveRecord::Schema.define(version: 20190414144224) do
 
-  create_table "sales", force: :cascade do |t|
-    t.string   "region"
-    t.string   "country"
-    t.string   "item_type"
-    t.string   "sales_channel"
-    t.string   "order_priority"
-    t.date     "order_date"
-    t.integer  "order_id"
-    t.date     "ship_date"
-    t.integer  "units_sold"
-    t.float    "unit_price"
-    t.float    "unit_cost"
-    t.float    "total_revenue"
-    t.float    "total_cost"
-    t.float    "total_profit"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+  create_table "vim_commands", force: :cascade do |t|
+    t.string   "description"
+    t.string   "img_before"
+    t.string   "img_after"
+    t.string   "command"
+    t.string   "example"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end
