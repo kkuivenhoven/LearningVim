@@ -8,11 +8,13 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-	<nav class="navbar navbar-default navbar-expand-sm">
+	<!--nav class="navbar navbar-default navbar-expand-sm"-->
+	<div class="sidenav">
 		<%= link_to 'Home', root_path, method: :get %>
 		&nbsp;&nbsp;&nbsp;<%= link_to 'Vim Command'.html_safe, vim_commands_path, method: :get %>
 		&nbsp;&nbsp;&nbsp;<%= link_to 'New Vim Command'.html_safe, new_vim_command_path, method: :get %>
-	</nav>
+	</div>
+	<!--/nav-->
 
 	<div class="center jumbotron jumbotron-fluid">
 		<div class="container">
