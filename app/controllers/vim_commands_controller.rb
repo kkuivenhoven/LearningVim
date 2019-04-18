@@ -41,7 +41,7 @@ class VimCommandsController < ApplicationController
 	private 
 
 		def vim_commands_params
-			params.require(:vim_command).permit(:description, :img_before, :img_after, :command, :example)
+			params.require(:vim_command).permit(:description, :img_example, :command)
 		end
 
 		def getIpAddr

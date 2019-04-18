@@ -1,5 +1,3 @@
-
-
 <table class="table">
 	<thead>
 		<tr>
@@ -12,15 +10,14 @@
 		<% @vim_commands.each do |v_c| %>
 			<tr>
 				<td>
-					<%= v_c.description %> - <%= v_c.id %>
+					<%= v_c.description %> &nbsp;•&nbsp;
+					<%= link_to 'Edit VC', edit_vim_command_path(:id => v_c.id) %>
 				</td>
 				<td>
 					<%= v_c.command %>
 				</td>
 				<td>
-					<%= v_c.img_example %><br>
 					<img src="<%= v_c.img_example %>" alt="v_c img example" width="250px;" height="auto;"></img>
-					<%= image_tag("#{v_c.img_example}", {:style => "width: 100px;"}) %>
 				</td>
 
 			</tr>
