@@ -10,8 +10,9 @@
 		<% @vim_commands.each do |v_c| %>
 			<tr>
 				<td>
-					<%= v_c.description %> &nbsp;•&nbsp;
-					<%= link_to 'Edit VC', edit_vim_command_path(:id => v_c.id) %>
+					<%= v_c.description %> &nbsp;<br>
+					•&nbsp;<%= link_to 'Edit VC', edit_vim_command_path(:id => v_c.id) %><br>
+					•&nbsp;<%= link_to 'Delete VC', vim_command_path(:id => v_c.id), method: :delete, data: { confirm: 'Are you sure?' } %><br>
 				</td>
 				<td>
 					<%= v_c.command %>

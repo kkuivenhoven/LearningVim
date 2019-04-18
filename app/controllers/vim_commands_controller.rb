@@ -38,6 +38,11 @@ class VimCommandsController < ApplicationController
 		end
 	end
 
+	def destroy
+		VimCommand.find(params[:id]).destroy
+		redirect_to vim_commands_path
+	end
+
 	private 
 
 		def vim_commands_params
