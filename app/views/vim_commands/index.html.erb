@@ -1,12 +1,31 @@
 
-index.html.erb
 
-<%= @ipAddr %>
+<table class="table">
+	<thead>
+		<tr>
+			<th scope="col">Description</th>
+			<th scope="col">Command</th>
+			<th scope="col">Example</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @vim_commands.each do |v_c| %>
+			<tr>
+				<td>
+					<%= v_c.description %> - <%= v_c.id %>
+				</td>
+				<td>
+					<%= v_c.command %>
+				</td>
+				<td>
+					<%= v_c.img_example %><br>
+					<img src="<%= v_c.img_example %>" alt="v_c img example" width="250px;" height="auto;"></img>
+					<%= image_tag("#{v_c.img_example}", {:style => "width: 100px;"}) %>
+				</td>
 
-<br>
+			</tr>
+		<% end %>
+			
 
 
-<% @vim_commands.each do |v_c| %>
-	<%= v_c.inspect %><br>
-<% end %>
 

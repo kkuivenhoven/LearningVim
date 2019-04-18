@@ -10,14 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190414144224) do
+ActiveRecord::Schema.define(version: 20190418012136) do
 
   create_table "vim_commands", force: :cascade do |t|
     t.string   "description"
-    t.string   "img_before"
-    t.string   "img_after"
+    t.string   "img_example"
     t.string   "command"
-    t.string   "example"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
