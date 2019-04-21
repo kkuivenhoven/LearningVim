@@ -13,6 +13,11 @@
 		<%= link_to 'Home', root_path, method: :get %>
 		&nbsp;&nbsp;&nbsp;<%= link_to 'Vim Command'.html_safe, vim_commands_path, method: :get %>
 		&nbsp;&nbsp;&nbsp;<%= link_to 'New Vim Command'.html_safe, new_vim_command_path, method: :get %>
+		<br><br><Br>
+		<%= form_tag(vim_commands_path, method: :get) do %>
+			<%= text_field_tag(:search, params[:search]) %><br>
+			<%= submit_tag("Search") %>
+		<% end %>
 	</div>
 	<!--/nav-->
 

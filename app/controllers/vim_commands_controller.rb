@@ -5,7 +5,11 @@ class VimCommandsController < ApplicationController
 	before_action :getIpAddr
 	
 	def index
-		@vim_commands = VimCommand.all
+		if params[:commit] == "Search"
+			@vim_commands = VimCommand.where("description like ?", "%#{params[:search]}%")
+		else
+			@vim_commands = VimCommand.all
+		end
 	end
 
 	def show
