@@ -18,7 +18,12 @@
 	</div>
 
 	<div class="form-group">
-		<%= form.label :img_example, "IMG Example: " %>
+		<%= form.label :img_example_before, "IMG Example (before): " %>
+		<%= form.text_field :img_example_before, class: 'form-control' %>
+	</div>
+
+	<div class="form-group">
+		<%= form.label :img_example, "IMG Example (after): " %>
 		<%= form.text_field :img_example, class: 'form-control' %>
 	</div>
 
