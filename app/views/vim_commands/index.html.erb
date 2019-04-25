@@ -20,7 +20,14 @@
 					<%= v_c.command %>
 				</td>
 				<td>
-					<img src="<%= v_c.img_example %>" alt="v_c img example" width="450px;" height="auto;"></img>
+						<label class="switch" id="switch-<%=v_c.id %>">
+							<input type="checkbox">
+							<span class="slider"></span>
+						</label>
+
+						<img class="img_example_before" src="<%= v_c.img_example_before %>" alt="v_c img example" width="450px;" height="auto;"></img>
+						<img class="img_example" src="<%= v_c.img_example %>" alt="v_c img example" width="450px;" height="auto;"></img>
+
 				</td>
 
 			</tr>
