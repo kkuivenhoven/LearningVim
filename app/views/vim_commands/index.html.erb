@@ -1,11 +1,3 @@
-
-<script>
-	var ids = '<%= @vim_commands.ids %>';
-	getIds(ids);
-	alert("hello i should be working");
-	console.log("hello i should be working");
-	myFunction();
-</script>
 <span id="vim_ids"><%= @vim_commands.ids %></span>
 
 <b style="color: red;">implement before and after JS toggle</b>
@@ -31,10 +23,10 @@
 				<td>
 						<label class="switch" id="switch-<%= v_c.id %>">
 							<input type="checkbox">
-							<span class="slider" id="slider-<%= v_c.id %>" onclick="listen();"></span>
+							<span class="slider" id="slider-<%= v_c.id %>" onclick="listen(<%= v_c.id %>);"></span>
 						</label>
 
-						<img id="img_example_before-<%= v_c.id %>" class="img_example_before" src="<%= v_c.img_example_before %>" alt="v_c img example" width="450px;" height="auto;"></img>
+						<img onload="callthis(<%= v_c.id %>)" id="img_example_before-<%= v_c.id %>" class="img_example_before" src="<%= v_c.img_example_before %>" alt="v_c img example" width="450px;" height="auto;"></img>
 						<img id="img_example-<%= v_c.id %>" class="img_example" src="<%= v_c.img_example %>" alt="v_c img example" width="450px;" height="auto;"></img>
 
 				</td>

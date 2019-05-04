@@ -1,17 +1,17 @@
-$(document).ready ->
-	if ($('#img_example_before-6').is ':visible') & ($('#img_example-6').is ':visible')
-		$('#img_example-6').hide()
-	return
+@callthis = (id) ->
+	$('#img_example-' + id).hide()
+	console.log "we made it here "
 
 
-@listen = () ->
-	if ($('#img_example_before-6').is ':hidden') & ($('#img_example-6').is ':visible')
-		$('#img_example-6').hide()
-		$('#img_example_before-6').show()
+@listen = (id) ->
+	console.log "id: " + id
+	if ($('#img_example_before-' + id).is ':hidden') & ($('#img_example-' + id).is ':visible')
+		$('#img_example-' + id).hide()
+		$('#img_example_before-' + id).show()
 		return
-	if ($('#img_example-6').is ':hidden') & ($('#img_example_before-6').is ':visible')
-		$('#img_example-6').show()
-		$('#img_example_before-6').hide()
+	if ($('#img_example-' + id).is ':hidden') & ($('#img_example_before-' + id).is ':visible')
+		$('#img_example-' + id).show()
+		$('#img_example_before-' + id).hide()
 		return
 	return
 
