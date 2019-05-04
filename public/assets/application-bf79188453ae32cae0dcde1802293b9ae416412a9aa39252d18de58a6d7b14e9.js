@@ -20555,6 +20555,12 @@ function sortTable(n){
 
 
 }).call(this);
+// function getIds(var ids){
+function getIds(){
+	console.log("hello");
+	// console.log("ids: " + ids);
+} 
+;
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
