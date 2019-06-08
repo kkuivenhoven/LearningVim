@@ -1,1 +1,6 @@
-CSV source: http://eforexcel.com/wp/downloads-18-sample-csv-files-data-sets-for-testing-sales/
+Learning Vim
+
+A web app to help beginning Vim learners pioneer their way through the treacherous trenches of the Vim language. 
+
+
+
