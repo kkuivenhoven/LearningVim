@@ -20,14 +20,17 @@
 					<%= v_c.command %>
 				</td>
 				<td>
-						<label class="switch" id="switch-<%= v_c.id %>">
-							<input type="checkbox">
-							<span class="slider" id="slider-<%= v_c.id %>" onclick="listen(<%= v_c.id %>);"></span>
-						</label>
+					<% if v_c.img_example_before != v_c.img_example %>
+							<label class="switch" id="switch-<%= v_c.id %>">
+								<input type="checkbox">
+								<span class="slider" id="slider-<%= v_c.id %>" onclick="listen(<%= v_c.id %>);"></span>
+							</label>
 
-						<img onload="callthis(<%= v_c.id %>)" id="img_example_before-<%= v_c.id %>" class="img_example_before" src="<%= v_c.img_example_before %>" alt="v_c img example" width="450px;" height="auto;"></img>
-						<img id="img_example-<%= v_c.id %>" class="img_example" src="<%= v_c.img_example %>" alt="v_c img example" width="450px;" height="auto;"></img>
-
+							<img onload="callthis(<%= v_c.id %>)" id="img_example_before-<%= v_c.id %>" class="img_example_before" src="<%= v_c.img_example_before %>" alt="v_c img example" width="450px;" height="auto;"></img>
+							<img id="img_example-<%= v_c.id %>" class="img_example" src="<%= v_c.img_example %>" alt="v_c img example" width="450px;" height="auto;"></img>
+					<% else %>
+							<img id="img_example_before-<%= v_c.id %>" class="img_example_before" src="<%= v_c.img_example_before %>" alt="v_c img example" width="450px;" height="auto;"></img>
+					<% end %>
 				</td>
 
 			</tr>
