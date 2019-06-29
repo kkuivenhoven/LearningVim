@@ -5,35 +5,24 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <!--%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %-->
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 		<%= javascript_include_tag('vim_commands.js') %>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   </head>
 
-	<!--nav class="navbar navbar-default navbar-expand-sm"-->
 	<div class="sidenav">
 		<%= link_to 'Home', root_path, method: :get %>
 		&nbsp;&nbsp;&nbsp;<%= link_to 'Vim Command'.html_safe, vim_commands_path, method: :get %>
 		&nbsp;&nbsp;&nbsp;<%= link_to 'New Vim Command'.html_safe, new_vim_command_path, method: :get %>
 		&nbsp;&nbsp;&nbsp;<%= link_to 'Blog'.html_safe, blogs_path, method: :get %>
+		&nbsp;&nbsp;&nbsp;<%= link_to "New Blog", new_blog_path, method: :get %>
 
 		<%= form_tag(vim_commands_path, method: :get) do %>
 			<%= text_field_tag(:search, params[:search]) %><br>
 			<%= submit_tag("Search") %>
 		<% end %>
 	</div>
-	<!--/nav-->
 
-	<!--div class="center jumbotron jumbotron-fluid">
-		<div class="container">
-			<h2>%= yield(:title) %></h2><br>
-			<p>%= yield(:p) %></p>
-
-			<p class="notice">%= notice %></p>
-			<p class="alert">%= alert %></p>
-		</div>
-	</div-->
 
 	<body>
 		<div class="container">

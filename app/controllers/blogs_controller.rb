@@ -14,7 +14,6 @@ class BlogsController < ApplicationController
 	def create
 		@blog = Blog.new(blog_params)
 		if @blog.save
-			byebug
 			redirect_to :action => 'index'
 		else
 			render :action => 'new'
@@ -22,9 +21,13 @@ class BlogsController < ApplicationController
 	end
 
 	def edit
+		@blog = Blog.find(params[:id])
 	end
 
 	def update
+		@blog = Blog.find(params[:id])
+		@blog.update(title: params[:blog][:title], post: params[:blog][:post])
+		redirect_to :action => 'index'
 	end
 
 	def destroy

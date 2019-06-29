@@ -1,12 +1,14 @@
-index.html.erb
-
-<button type="button" class="btn btn-secondary">Secondary</button>
-
-<%= link_to "New Blog", new_blog_path, :class => "btn btn-secondary" %>
+<h1 class="page_header">Blog Posts</h1>
 
 <% @blogs.each do |blog| %>
-	<%= blog.inspect %><br>
+
+	<span style="font-size: 32px;">
+		<%= blog.title %>&nbsp;&nbsp;<%= link_to "Edit Blog", edit_blog_path(blog.id), :class => "btn btn-light edit_btn" %> <br>
+	</span>
+
+	<p class="blog_post">
+		<%= blog.post %><br>
+	</p>
+
 <% end %>
-
-
 

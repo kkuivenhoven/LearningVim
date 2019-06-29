@@ -1,4 +1,22 @@
+<div class="outer_new_blog_post_container">
 
-edit.html.erb
+	<h3>Edit Blog Post</h3>
 
+	<div class="container new_blog_post">
+
+		<%= form_for(@blog) do |f| %>
+
+			<%= f.label :title %>
+			<%= f.text_field :title %><br>
+
+			<%= f.label :post %>
+			<%= f.text_field :post %><br>
+
+			<%= f.submit "Submit", class: "btn btn-primary" %>
+
+		<% end %>
+
+	</div>
+
+</div>
 
