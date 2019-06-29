@@ -5,8 +5,10 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %-->
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 		<%= javascript_include_tag('vim_commands.js') %>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   </head>
 
 	<!--nav class="navbar navbar-default navbar-expand-sm"-->
@@ -14,7 +16,8 @@
 		<%= link_to 'Home', root_path, method: :get %>
 		&nbsp;&nbsp;&nbsp;<%= link_to 'Vim Command'.html_safe, vim_commands_path, method: :get %>
 		&nbsp;&nbsp;&nbsp;<%= link_to 'New Vim Command'.html_safe, new_vim_command_path, method: :get %>
-		<br><br><Br>
+		&nbsp;&nbsp;&nbsp;<%= link_to 'Blog'.html_safe, blogs_path, method: :get %>
+
 		<%= form_tag(vim_commands_path, method: :get) do %>
 			<%= text_field_tag(:search, params[:search]) %><br>
 			<%= submit_tag("Search") %>
@@ -35,9 +38,10 @@
 	<body>
 		<div class="container">
 			<%= yield %>
-			<br><%= debug(params) if Rails.env.development? %>
 		</div>
-	</tbody>
+		<br><%= debug(params) if Rails.env.development? %>
+	</body>
+
 
 	<div class="footer navbar-fixed-bottom">
 	</div>

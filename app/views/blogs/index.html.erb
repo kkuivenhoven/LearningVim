@@ -1,0 +1,12 @@
+index.html.erb
+
+<button type="button" class="btn btn-secondary">Secondary</button>
+
+<%= link_to "New Blog", new_blog_path, :class => "btn btn-secondary" %>
+
+<% @blogs.each do |blog| %>
+	<%= blog.inspect %><br>
+<% end %>
+
+
+

@@ -1,0 +1,22 @@
+/* 
+ * Place all the styles related to the Blogs controller here.
+ * They will automatically be included in application.css.
+ * You can use Sass (SCSS) here: http://sass-lang.com/
+*/
+
+.outer_new_blog_post_container {
+	padding-top: 200px;
+	text-align: center;
+}
+
+.new_blog_post {
+}
+
+input[type=text]{
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	border: 2px solid #adfdff !important;
+	border-radius: 4px;
+}
+
