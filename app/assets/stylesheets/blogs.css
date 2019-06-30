@@ -2,6 +2,8 @@
  * Place all the styles related to the Blogs controller here.
  * They will automatically be included in application.css.
  * You can use Sass (SCSS) here: http://sass-lang.com/
+ * Sources:
+ * 		glow effect: https://designshack.net/articles/css/12-fun-css-text-shadows-you-can-copy-and-paste/
 */
 
 .outer_new_blog_post_container {
@@ -33,6 +35,9 @@ input[type=text]{
 	text-align: center;
 	padding-bottom: 50px;
 	font-size: 48px;
+	color: rgba(0,0,0,0.6);
+	text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+		0px -5px 35px rgba(255,255,255,0.3);
 }
 
 .blog_post {
