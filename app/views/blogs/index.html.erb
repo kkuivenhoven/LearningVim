@@ -3,7 +3,10 @@
 <% @blogs.each do |blog| %>
 
 	<span style="font-size: 32px;">
-		<%= blog.title %>&nbsp;&nbsp;<%= link_to "Edit Blog", edit_blog_path(blog.id), :class => "btn btn-light edit_btn" %> <br>
+		<span class="blog_title"><%= blog.title %></span>
+		&nbsp;&nbsp;
+		<%= link_to "Edit Blog", edit_blog_path(blog.id), :class => "btn btn-light edit_btn" %> 
+		<br>
 	</span>
 
 	<p class="blog_post">

@@ -18,7 +18,7 @@
 		&nbsp;&nbsp;&nbsp;<%= link_to "New Blog", new_blog_path, method: :get %>
 
 		<%= form_tag(vim_commands_path, method: :get) do %>
-			<%= text_field_tag(:search, params[:search]) %><br>
+			<%= text_field_tag(:search, params[:search], class: 'nav_search') %><br>
 			<%= submit_tag("Search") %>
 		<% end %>
 	</div>

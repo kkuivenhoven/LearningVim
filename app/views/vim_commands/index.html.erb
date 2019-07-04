@@ -2,7 +2,50 @@
 
 <span style="display: none;" id="vim_ids"><%= @vim_commands.ids %></span>
 
-<table class="table">
+
+<% @vim_commands.each do |v_c| %>
+
+		<!--span style="font-size: 32px;">	
+			%= v_c.command %> &nbsp; %= v_c.description %>
+		</span-->
+			<!--div style="width: 50%; float: left; text-align: right; padding-right: 20px;"-->
+
+	<!--div class="vim_command_post"-->
+	<span class="vim_command_title"><%= v_c.command %></span>
+	<div class="container vim_command_post" style="display: flex; width: 100%;">
+		<div class="container" style="flex: 1; width: 25%;">
+			<span style="font-size: 18px; font-weight: bold; font-family: 'Brush Script MT';"><%= v_c.description %></span>
+
+				•&nbsp;<%= link_to 'Edit VC', edit_vim_command_path(:id => v_c.id) %><br>
+				•&nbsp;<%= link_to 'Delete VC', vim_command_path(:id => v_c.id), method: :delete, data: { confirm: 'Are you sure?' } %><br>
+		</div>
+
+
+		<div class="container" style="flex: 1; width: 25%;">	
+			<label class="switch" id="switch-<%= v_c.id %>">
+				<input type="checkbox">
+				<span class="slider" id="slider-<%= v_c.id %>" onclick="listen(<%= v_c.id %>);"></span>
+			</label>
+		</div>
+
+		<!--div style="width: 50%; float: right;"-->	
+		<div class="container" style="flex: 1; width: 25%;">	
+			<% if v_c.img_example_before != v_c.img_example %>
+				<img onload="callthis(<%= v_c.id %>)" id="img_example_before-<%= v_c.id %>" class="img_example_before" src="/assets/<%= v_c.img_example_before %>" alt="v_c img example" width="450px;" height="auto;"></img>
+					<img id="img_example-<%= v_c.id %>" class="img_example" src="/assets/<%= v_c.img_example %>" alt="v_c img example" width="450px;" height="auto;"></img>
+			<% else %>
+				<img id="img_example_before-<%= v_c.id %>" class="img_example_before" src="/assets/<%= v_c.img_example_before %>" alt="v_c img example" width="450px;" height="auto;"></img>
+			<% end %>
+		</div>
+
+	</div>
+
+	</div>
+
+<% end %>
+
+
+<!--table class="table">
 	<thead>
 		<tr>
 			<th scope="col">Description</th>
@@ -11,33 +54,34 @@
 		</tr>
 	</thead>
 	<tbody>
-		<% @vim_commands.each do |v_c| %>
+		% @vim_commands.each do |v_c| %>
 			<tr>
 				<td>
-					<%= v_c.description %> &nbsp;<br>
-					•&nbsp;<%= link_to 'Edit VC', edit_vim_command_path(:id => v_c.id) %><br>
-					•&nbsp;<%= link_to 'Delete VC', vim_command_path(:id => v_c.id), method: :delete, data: { confirm: 'Are you sure?' } %><br>
+					%= v_c.description %> &nbsp;<br>
+					•&nbsp;%= link_to 'Edit VC', edit_vim_command_path(:id => v_c.id) %><br>
+					•&nbsp;%= link_to 'Delete VC', vim_command_path(:id => v_c.id), method: :delete, data: { confirm: 'Are you sure?' } %><br>
 				</td>
 				<td>
-					<%= v_c.command %>
+					<= v_c.command %>
 				</td>
 				<td>
-					<% if v_c.img_example_before != v_c.img_example %>
-							<label class="switch" id="switch-<%= v_c.id %>">
+					% if v_c.img_example_before != v_c.img_example %>
+							<label class="switch" id="switch-%= v_c.id %>">
 								<input type="checkbox">
-								<span class="slider" id="slider-<%= v_c.id %>" onclick="listen(<%= v_c.id %>);"></span>
+								<span class="slider" id="slider-%= v_c.id %>" onclick="listen(%= v_c.id %>);"></span>
 							</label>
 
-							<img onload="callthis(<%= v_c.id %>)" id="img_example_before-<%= v_c.id %>" class="img_example_before" src="/assets/<%= v_c.img_example_before %>" alt="v_c img example" width="450px;" height="auto;"></img>
-							<img id="img_example-<%= v_c.id %>" class="img_example" src="/assets/<%= v_c.img_example %>" alt="v_c img example" width="450px;" height="auto;"></img>
-					<% else %>
-							<img id="img_example_before-<%= v_c.id %>" class="img_example_before" src="/assets/<%= v_c.img_example_before %>" alt="v_c img example" width="450px;" height="auto;"></img>
-					<% end %>
+							<img onload="callthis(%= v_c.id %>)" id="img_example_before-%= v_c.id %>" class="img_example_before" src="/assets/%= v_c.img_example_before %>" alt="v_c img example" width="450px;" height="auto;"></img>
+							<img id="img_example-%= v_c.id %>" class="img_example" src="/assets/%= v_c.img_example %>" alt="v_c img example" width="450px;" height="auto;"></img>
+					% else %>
+							<img id="img_example_before-%= v_c.id %>" class="img_example_before" src="/assets/%= v_c.img_example_before %>" alt="v_c img example" width="450px;" height="auto;"></img>
+					% end %>
 				</td>
 
 			</tr>
-		<% end %>
-			
+		% end %>
+	</tbody>
+</table>			
 
 
 
