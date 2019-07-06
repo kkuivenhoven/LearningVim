@@ -10461,13 +10461,32 @@ a.text-dark:hover, a.text-dark:focus {
 /* line 23, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/static_pages.scss */
 .sidenav a:hover {
   color: #f1f1f1;
+  transition: 1s;
 }
 
-/* line 28, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/static_pages.scss */
+/* line 31, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/static_pages.scss */
 body {
   margin-left: 240px;
   padding: 0px 10px;
   background-color: #111;
+}
+
+/* line 3, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/vim_commands.scss */
+.vim_command_title {
+  width: 100%;
+  font-size: 24px;
+  font-family: 'Brush Script MT';
+}
+
+/* line 10, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/vim_commands.scss */
+.vim_command_post {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-shadow: inset 0 0 10px #000;
+  font-size: 14px;
+  height: 175px;
+  overflow: scroll;
 }
 
 /**
@@ -10505,7 +10524,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: rgba(204, 204, 204, 0.25);
   transition: .4s;
 }
 
@@ -10523,17 +10542,17 @@ body {
 
 /* line 51, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/toggle.scss */
 input:checked + .slider {
-  background-color: #2196f3;
+  background-color: rgba(173, 253, 255, 0.25);
 }
 
 /* line 55, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/toggle.scss */
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
+  box-shadow: 0 0 1px rgba(173, 253, 255, 0.25);
 }
 
 /* line 59, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/toggle.scss */
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
+  box-shadow: 0 0 1px rgba(173, 253, 255, 0.25);
 }
 
 /* line 63, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/toggle.scss */
@@ -10546,14 +10565,60 @@ input:checked + .slider:before {
  * Place all the styles related to the Blogs controller here.
  * They will automatically be included in application.css.
  * You can use Sass (SCSS) here: http://sass-lang.com/
+ * Sources:
+ * 		glow effect: https://designshack.net/articles/css/12-fun-css-text-shadows-you-can-copy-and-paste/
 */
-/* line 7, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.css */
+/* line 10, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
+.new_blog_post_submit {
+  width: 475px;
+  color: #a8b2b2;
+  background-color: #323232;
+  border-radius: 5px 5px 5px 5px;
+  border: 2px solid;
+}
+
+/* line 18, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
+.new_blog_post_submit:hover {
+  transition: 1s;
+  border-radius: 5px 5px 5px 5px;
+  border: 2px solid;
+  border-color: #adfdff;
+  background-color: #323232;
+  color: #a8b2b2;
+}
+
+/* line 27, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
+.new_blog_post_header {
+  font-size: 75px;
+  color: rgba(173, 253, 255, 0.9);
+  text-shadow: 4px 16px 12px rgba(0, 0, 0, 0.2), 0px -10px 70px rgba(255, 255, 255, 0.3);
+}
+
+/* line 35, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
+.new_blog_post_form label {
+  font-size: 37px;
+  color: rgba(173, 253, 255, 0.9);
+  text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
+}
+/* line 41, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
+.new_blog_post_form #blog_title {
+  width: 475px;
+}
+/* line 44, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
+.new_blog_post_form #blog_post {
+  height: 200px;
+  width: 475px;
+  border-radius: 5px;
+  border: 2px solid #adfdff;
+}
+
+/* line 54, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
 .outer_new_blog_post_container {
   padding-top: 200px;
   text-align: center;
 }
 
-/* line 15, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.css */
+/* line 62, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
 input[type=text] {
   padding: 12px 20px;
   margin: 8px 0;
@@ -10562,29 +10627,58 @@ input[type=text] {
   border-radius: 4px;
 }
 
-/* line 23, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.css */
+/* line 70, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
 .edit_btn {
-  opacity: 0.5;
+  color: #a8b2b2;
+  background-color: #323232;
+  border-radius: 5px 5px 5px 5px;
+  border: 2px solid;
 }
 
-/* line 27, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.css */
+/* line 77, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
+.edit_btn:hover {
+  transition: 1s;
+  border-radius: 5px 5px 5px 5px;
+  border: 2px solid;
+  border-color: #adfdff;
+  background-color: #323232;
+  color: #a8b2b2;
+}
+
+/* line 87, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
 .new_btn {
   width: 100%;
 }
 
-/* line 31, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.css */
+/* line 91, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
 .page_header {
   padding-top: 50px;
   text-align: center;
   padding-bottom: 50px;
-  font-size: 48px;
+  font-size: 125px;
+  color: rgba(173, 253, 255, 0.9);
+  text-shadow: 4px 16px 12px rgba(0, 0, 0, 0.2), 0px -10px 70px rgba(255, 255, 255, 0.3);
 }
 
-/* line 38, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.css */
+/* line 102, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
+.blog_title {
+  color: rgba(173, 253, 255, 0.9);
+  text-shadow: 4px 16px 12px rgba(0, 0, 0, 0.2), 0px -10px 70px rgba(255, 255, 255, 0.3);
+}
+
+/* line 108, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
+.blog_title:hover {
+  color: azure;
+  transition: 2s;
+  text-shadow: 4px 16px 12px rgba(0, 0, 0, 0.2), 0px -10px 70px rgba(255, 255, 255, 0.3);
+}
+
+/* line 116, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
 .blog_post {
   padding-top: 10px;
   box-shadow: inset 0 0 10px #000;
-  font-size: 14px;
+  font-size: 24px;
   height: 150px;
   overflow: scroll;
+  color: #a8b2b2;
 }

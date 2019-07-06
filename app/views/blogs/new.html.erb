@@ -1,18 +1,23 @@
 <div class="outer_new_blog_post_container">
 
-	<h3>New Blog Post</h3>
+	<h3 class="new_blog_post_header">New Blog Post</h3>
 
 	<div class="container new_blog_post">
 
-		<%= form_for(@blog) do |f| %>
+		<%= form_for(@blog, :html => { :class => "new_blog_post_form" }) do |f| %>
 
-			<%= f.label :title %>
-			<%= f.text_field :title %><br>
+			<div style="width: 600px;">
+				<div style="width: 200px; float: left; text-align: right; padding-right: 10px;">
+					<%= f.label :title %><br>
+					<%= f.label :post %><br>
+				</div>
 
-			<%= f.label :post %>
-			<%= f.text_field :post %><br>
-
-			<%= f.submit "Submit", class: "btn btn-primary" %>
+				<div style="width: 400px; float: right;">
+					<%= f.text_field :title %><br>
+					<%= f.text_area :post %><br>
+					<%= f.submit "Submit", class: "btn new_blog_post_submit" %>
+				</div>
+			</div>
 
 		<% end %>
 

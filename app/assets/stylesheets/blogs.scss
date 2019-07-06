@@ -6,6 +6,51 @@
  * 		glow effect: https://designshack.net/articles/css/12-fun-css-text-shadows-you-can-copy-and-paste/
 */
 
+
+.new_blog_post_submit {
+	width: 475px;
+	color: rgba(168,178,178,1);
+	background-color: #323232;
+	border-radius: 5px 5px 5px 5px;
+	border: 2px solid;
+}
+
+.new_blog_post_submit:hover {
+	transition: 1s;
+	border-radius: 5px 5px 5px 5px;
+	border: 2px solid;
+	border-color: #adfdff;
+	background-color: #323232;
+	color: rgba(168,178,178,1);
+}
+
+.new_blog_post_header {
+	font-size: 75px;
+	color: rgba(173,253,255,0.9);
+	text-shadow: 4px 16px 12px rgba(0,0,0,0.2),
+		0px -10px 70px rgba(255,255,255,0.3);
+}
+
+.new_blog_post_form {
+	label {
+		font-size: 37px;
+		color: rgba(173,253,255,0.9);
+		text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+			0px -5px 35px rgba(255,255,255,0.3);
+	}
+	#blog_title {
+		width: 475px;
+	}
+	#blog_post {
+		// color: red;
+		height: 200px;
+		width: 475px;
+		border-radius: 5px;
+		border: 2px solid #adfdff;
+	}
+}
+
+
 .outer_new_blog_post_container {
 	padding-top: 200px;
 	text-align: center;
