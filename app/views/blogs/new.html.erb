@@ -1,20 +1,20 @@
-<div class="outer_new_blog_post_container">
+<h3 class="new_blog_post_header">New Blog Post</h3>
 
-	<h3 class="new_blog_post_header">New Blog Post</h3>
+<div class="outer_new_blog_post_container">
 
 	<div class="container new_blog_post">
 
 		<%= form_for(@blog, :html => { :class => "new_blog_post_form" }) do |f| %>
 
-			<div style="width: 600px;">
-				<div style="width: 200px; float: left; text-align: right; padding-right: 10px;">
+			<div style="width: 100%;">
+				<div style="width: 28%; float: left; text-align: right; padding-right: 10px;">
 					<%= f.label :title %><br>
 					<%= f.label :post %><br>
 				</div>
 
-				<div style="width: 400px; float: right;">
+				<div style="width: 72%; float: right; text-align: left;">
 					<%= f.text_field :title %><br>
-					<%= f.text_area :post %><br>
+					<%= f.text_area :post, { :onChange => "expand_textarea()", :onInput => "on_input(this)" } %><br>
 					<%= f.submit "Submit", class: "btn new_blog_post_submit" %>
 				</div>
 			</div>

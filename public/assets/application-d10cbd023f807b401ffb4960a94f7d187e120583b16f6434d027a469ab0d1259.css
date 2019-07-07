@@ -10471,14 +10471,21 @@ body {
   background-color: #111;
 }
 
-/* line 5, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/vim_commands.scss */
+/* line 3, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/vim_commands.scss */
+.vim_command_title {
+  width: 100%;
+  font-size: 24px;
+  font-family: 'Brush Script MT';
+}
+
+/* line 10, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/vim_commands.scss */
 .vim_command_post {
   padding-top: 10px;
   padding-left: 10px;
   padding-right: 10px;
   box-shadow: inset 0 0 10px #000;
   font-size: 14px;
-  height: 40px;
+  height: 175px;
   overflow: scroll;
 }
 
@@ -10561,13 +10568,60 @@ input:checked + .slider:before {
  * Sources:
  * 		glow effect: https://designshack.net/articles/css/12-fun-css-text-shadows-you-can-copy-and-paste/
 */
-/* line 9, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
+/* line 10, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
+.new_blog_post_submit {
+  width: 475px;
+  color: #a8b2b2;
+  background-color: #323232;
+  border-radius: 5px 5px 5px 5px;
+  border: 2px solid;
+}
+
+/* line 18, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
+.new_blog_post_submit:hover {
+  transition: 1s;
+  border-radius: 5px 5px 5px 5px;
+  border: 2px solid;
+  border-color: #adfdff;
+  background-color: #323232;
+  color: #a8b2b2;
+}
+
+/* line 27, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
+.new_blog_post_header {
+  font-size: 75px;
+  color: rgba(173, 253, 255, 0.9);
+  text-shadow: 4px 16px 12px rgba(0, 0, 0, 0.2), 0px -10px 70px rgba(255, 255, 255, 0.3);
+  padding-top: 100px;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+/* line 38, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
+.new_blog_post_form label {
+  font-size: 37px;
+  color: rgba(173, 253, 255, 0.9);
+  text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
+}
+/* line 44, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
+.new_blog_post_form #blog_title {
+  width: 475px;
+}
+/* line 47, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
+.new_blog_post_form #blog_post {
+  width: 475px;
+  border-radius: 5px;
+  border: 2px solid #adfdff;
+  max-height: 400px;
+  overflow: auto;
+}
+
+/* line 57, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
 .outer_new_blog_post_container {
-  padding-top: 200px;
   text-align: center;
 }
 
-/* line 17, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
+/* line 65, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
 input[type=text] {
   padding: 12px 20px;
   margin: 8px 0;
@@ -10576,41 +10630,58 @@ input[type=text] {
   border-radius: 4px;
 }
 
-/* line 25, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
+/* line 73, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
 .edit_btn {
-  opacity: 0.5;
+  color: #a8b2b2;
   background-color: #323232;
+  border-radius: 5px 5px 5px 5px;
+  border: 2px solid;
 }
 
-/* line 30, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
+/* line 80, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
 .edit_btn:hover {
   transition: 1s;
   border-radius: 5px 5px 5px 5px;
   border: 2px solid;
   border-color: #adfdff;
-  background-color: rgba(17, 17, 17, 0.1);
+  background-color: #323232;
+  color: #a8b2b2;
 }
 
-/* line 38, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
+/* line 90, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
 .new_btn {
   width: 100%;
 }
 
-/* line 42, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
+/* line 94, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
 .page_header {
   padding-top: 50px;
   text-align: center;
   padding-bottom: 50px;
-  font-size: 48px;
-  color: rgba(0, 0, 0, 0.6);
-  text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
+  font-size: 125px;
+  color: rgba(173, 253, 255, 0.9);
+  text-shadow: 4px 16px 12px rgba(0, 0, 0, 0.2), 0px -10px 70px rgba(255, 255, 255, 0.3);
 }
 
-/* line 52, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
+/* line 105, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
+.blog_title {
+  color: rgba(173, 253, 255, 0.9);
+  text-shadow: 4px 16px 12px rgba(0, 0, 0, 0.2), 0px -10px 70px rgba(255, 255, 255, 0.3);
+}
+
+/* line 111, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
+.blog_title:hover {
+  color: azure;
+  transition: 2s;
+  text-shadow: 4px 16px 12px rgba(0, 0, 0, 0.2), 0px -10px 70px rgba(255, 255, 255, 0.3);
+}
+
+/* line 119, /Users/kendrakuivenhoven/Venture/app/assets/stylesheets/blogs.scss */
 .blog_post {
   padding-top: 10px;
   box-shadow: inset 0 0 10px #000;
-  font-size: 14px;
+  font-size: 24px;
   height: 150px;
   overflow: scroll;
+  color: #a8b2b2;
 }

@@ -29,6 +29,9 @@
 	color: rgba(173,253,255,0.9);
 	text-shadow: 4px 16px 12px rgba(0,0,0,0.2),
 		0px -10px 70px rgba(255,255,255,0.3);
+	padding-top: 100px;
+	text-align: center;
+	padding-bottom: 50px;
 }
 
 .new_blog_post_form {
@@ -42,17 +45,17 @@
 		width: 475px;
 	}
 	#blog_post {
-		// color: red;
-		height: 200px;
 		width: 475px;
 		border-radius: 5px;
 		border: 2px solid #adfdff;
+		max-height: 400px;
+		overflow: auto;
 	}
 }
 
 
 .outer_new_blog_post_container {
-	padding-top: 200px;
+	// padding-top: 200px;
 	text-align: center;
 }
 

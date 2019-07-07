@@ -19894,6 +19894,32 @@ Copyright © 2018 Basecamp, LLC
 
 
 
+var new_blog_post_height = 0;
+var cursor_position = 0;
+
+$(document).on('turbolinks:load', function(){
+	if(window.location.includes("blogs/new")){
+		new_blog_post_height = $('#blog_post').prop('scrollHeight'); 
+	}
+});
+
+
+function expand_textarea(){
+	// alert(" reached expand_textarea()");
+}
+
+function on_input(obj){
+	if(parseInt($('#blog_post').prop("selectionStart")) == 1){
+		new_blog_post_height = $('#blog_post').prop('scrollHeight');
+	}
+	cursor_position = $('#blog_post').prop("scrollHeight");
+	if(cursor_position > new_blog_post_height){
+		console.log(" $('#blog_post').style: " + $('#blog_post').style);
+		console.log(" cursor_position >= new_blog_post_height: " + cursor_position + " > " + new_blog_post_height);
+		$('#blog_post').style.height = (cursor_position + 'px');
+	}
+}
+;
 (function() {
   (function() {
     (function() {
@@ -20505,22 +20531,21 @@ Copyright © 2018 Basecamp, LLC
 
 }).call(this);
 (function() {
-  $(document).ready(function() {
-    if (($('#img_example_before-6').is(':visible')) & ($('#img_example-6').is(':visible'))) {
-      $('#img_example-6').hide();
-    }
-  });
+  this.callthis = function(id) {
+    $('#img_example-' + id).hide();
+    return console.log("we made it here ");
+  };
 
   this.listen = function(id) {
     console.log("id: " + id);
-    if (($('#img_example_before-6').is(':hidden')) & ($('#img_example-6').is(':visible'))) {
-      $('#img_example-6').hide();
-      $('#img_example_before-6').show();
+    if (($('#img_example_before-' + id).is(':hidden')) & ($('#img_example-' + id).is(':visible'))) {
+      $('#img_example-' + id).hide();
+      $('#img_example_before-' + id).show();
       return;
     }
-    if (($('#img_example-6').is(':hidden')) & ($('#img_example_before-6').is(':visible'))) {
-      $('#img_example-6').show();
-      $('#img_example_before-6').hide();
+    if (($('#img_example-' + id).is(':hidden')) & ($('#img_example_before-' + id).is(':visible'))) {
+      $('#img_example-' + id).show();
+      $('#img_example_before-' + id).hide();
       return;
     }
   };
@@ -20536,6 +20561,10 @@ Copyright © 2018 Basecamp, LLC
   console.log(id);
 
   console.log(typeof id);
+
+}).call(this);
+(function() {
+
 
 }).call(this);
 (function() {
