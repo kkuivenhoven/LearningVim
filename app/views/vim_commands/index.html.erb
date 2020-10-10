@@ -3,46 +3,58 @@
 <span style="display: none;" id="vim_ids"><%= @vim_commands.ids %></span>
 
 
-<% @vim_commands.each do |v_c| %>
+<!--div class="container">
+	<div class="card"></div>
+</div-->
 
-		<!--span style="font-size: 32px;">	
-			%= v_c.command %> &nbsp; %= v_c.description %>
-		</span-->
-			<!--div style="width: 50%; float: left; text-align: right; padding-right: 20px;"-->
 
-	<!--div class="vim_command_post"-->
-	<span class="vim_command_title"><%= v_c.command %></span>
+<% @vim_commands.each_with_index do |v_c, index| %>
+	<div class="container">
+		<span class="vim_command_title"><%= v_c.command %></span>
+		<br>
+		<%= image_tag("#{v_c.img_example_before}", 
+				:onmouseover => "this.src='assets/#{v_c.img_example}'", 
+				:onmouseout => "this.src='assets/#{v_c.img_example_before}'", 
+				:class => "vim_cards") %>
+		<br>
+		<span style="font-size: 18px; font-weight: bold; font-family: 'Courier'; color: #adfdff"><%= v_c.description %></span>		
+	</div>
+<% end %>
+
+
+<!--% @vim_commands.each do |v_c| %>
+
+	<span class="vim_command_title">%= v_c.command %></span>
 	<div class="container vim_command_post" style="display: flex; width: 100%;">
 		<div class="container" style="flex: 1; width: 25%;">
-			<span style="font-size: 18px; font-weight: bold; font-family: 'Courier'; color: #adfdff"><%= v_c.description %></span>
+			<span style="font-size: 18px; font-weight: bold; font-family: 'Courier'; color: #adfdff">%= v_c.description %></span>
 				<br>
-				•&nbsp;<%= link_to 'Edit VC', edit_vim_command_path(:id => v_c.id) %><br>
-				•&nbsp;<%= link_to 'Delete VC', vim_command_path(:id => v_c.id), method: :delete, data: { confirm: 'Are you sure?' } %><br>
+				•&nbsp;%= link_to 'Edit VC', edit_vim_command_path(:id => v_c.id) %><br>
+				•&nbsp;%= link_to 'Delete VC', vim_command_path(:id => v_c.id), method: :delete, data: { confirm: 'Are you sure?' } %><br>
 		</div>
 
 
 		<div class="container" style="flex: 1; width: 25%;">	
-			<label class="switch" id="switch-<%= v_c.id %>">
+			<label class="switch" id="switch-%= v_c.id %>">
 				<input type="checkbox">
-				<span class="slider" id="slider-<%= v_c.id %>" onclick="listen(<%= v_c.id %>);"></span>
+				<span class="slider" id="slider-%= v_c.id %>" onclick="listen(%= v_c.id %>);"></span>
 			</label>
 		</div>
 
-		<!--div style="width: 50%; float: right;"-->	
 		<div class="container" style="flex: 1; width: 25%;">	
-			<% if v_c.img_example_before != v_c.img_example %>
-				<img onload="callthis(<%= v_c.id %>)" id="img_example_before-<%= v_c.id %>" class="img_example_before" src="/assets/<%= v_c.img_example_before %>" alt="v_c img example" width="450px;" height="auto;"></img>
-					<img id="img_example-<%= v_c.id %>" class="img_example" src="/assets/<%= v_c.img_example %>" alt="v_c img example" width="450px;" height="auto;"></img>
-			<% else %>
-				<img id="img_example_before-<%= v_c.id %>" class="img_example_before" src="/assets/<%= v_c.img_example_before %>" alt="v_c img example" width="450px;" height="auto;"></img>
-			<% end %>
+			% if v_c.img_example_before != v_c.img_example %>
+				<img onload="callthis(%= v_c.id %>)" id="img_example_before-%= v_c.id %>" class="img_example_before" src="/assets/%= v_c.img_example_before %>" alt="v_c img example" width="450px;" height="auto;"></img>
+					<img id="img_example-%= v_c.id %>" class="img_example" src="/assets/%= v_c.img_example %>" alt="v_c img example" width="450px;" height="auto;"></img>
+			% else %>
+				<img id="img_example_before-%= v_c.id %>" class="img_example_before" src="/assets/%= v_c.img_example_before %>" alt="v_c img example" width="450px;" height="auto;"></img>
+			% end %>
 		</div>
 
 	</div>
 
 	</div>
 
-<% end %>
+ end %-->
 
 
 <!--table class="table">

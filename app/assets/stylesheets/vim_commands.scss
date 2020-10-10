@@ -1,5 +1,23 @@
 
 
+.vim_cards {
+	width: 80%;	
+}
+
+
+.card {
+	width: 130px;
+	height: 195px;
+	background: image-url("shift_p_before.png");
+	display: inline-block;
+}
+
+
+.card:hover {
+	background: image-url("shift_p_after.png");
+}
+
+
 .vim_command_title {
 	width: 100%;
 	font-size: 24px;
