@@ -3,11 +3,6 @@
 <span style="display: none;" id="vim_ids"><%= @vim_commands.ids %></span>
 
 
-<!--div class="container">
-	<div class="card"></div>
-</div-->
-
-
 <% @vim_commands.each_with_index do |v_c, index| %>
 	<div class="container">
 		<span class="vim_command_title"><%= v_c.command %></span>
@@ -55,45 +50,6 @@
 	</div>
 
  end %-->
-
-
-<!--table class="table">
-	<thead>
-		<tr>
-			<th scope="col">Description</th>
-			<th scope="col">Command</th>
-			<th scope="col">Example</th>
-		</tr>
-	</thead>
-	<tbody>
-		% @vim_commands.each do |v_c| %>
-			<tr>
-				<td>
-					%= v_c.description %> &nbsp;<br>
-					•&nbsp;%= link_to 'Edit VC', edit_vim_command_path(:id => v_c.id) %><br>
-					•&nbsp;%= link_to 'Delete VC', vim_command_path(:id => v_c.id), method: :delete, data: { confirm: 'Are you sure?' } %><br>
-				</td>
-				<td>
-					<= v_c.command %>
-				</td>
-				<td>
-					% if v_c.img_example_before != v_c.img_example %>
-							<label class="switch" id="switch-%= v_c.id %>">
-								<input type="checkbox">
-								<span class="slider" id="slider-%= v_c.id %>" onclick="listen(%= v_c.id %>);"></span>
-							</label>
-
-							<img onload="callthis(%= v_c.id %>)" id="img_example_before-%= v_c.id %>" class="img_example_before" src="/assets/%= v_c.img_example_before %>" alt="v_c img example" width="450px;" height="auto;"></img>
-							<img id="img_example-%= v_c.id %>" class="img_example" src="/assets/%= v_c.img_example %>" alt="v_c img example" width="450px;" height="auto;"></img>
-					% else %>
-							<img id="img_example_before-%= v_c.id %>" class="img_example_before" src="/assets/%= v_c.img_example_before %>" alt="v_c img example" width="450px;" height="auto;"></img>
-					% end %>
-				</td>
-
-			</tr>
-		% end %>
-	</tbody>
-</table>			
 
 
 

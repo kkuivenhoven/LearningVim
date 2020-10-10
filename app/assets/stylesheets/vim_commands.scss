@@ -1,20 +1,7 @@
 
 
 .vim_cards {
-	width: 50%;	
-}
-
-
-.card {
-	width: 130px;
-	height: 195px;
-	background: image-url("shift_p_before.png");
-	display: inline-block;
-}
-
-
-.card:hover {
-	background: image-url("shift_p_after.png");
+	width: 50vw; // vw = view width
 }
 
 
