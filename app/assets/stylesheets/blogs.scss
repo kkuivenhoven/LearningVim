@@ -93,11 +93,13 @@ input[type=text]{
 }
 
 .page_header {
+	font-family: "Brush Script MT";
 	padding-top: 50px;
 	text-align: center;
 	padding-bottom: 50px;
 	font-size: 125px;
 	color: rgba(173,253,255,0.9);
+	// color: red;
 	text-shadow: 4px 16px 12px rgba(0,0,0,0.2),
 		0px -10px 70px rgba(255,255,255,0.3);
 }

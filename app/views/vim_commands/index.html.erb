@@ -14,8 +14,8 @@
 	<span class="vim_command_title"><%= v_c.command %></span>
 	<div class="container vim_command_post" style="display: flex; width: 100%;">
 		<div class="container" style="flex: 1; width: 25%;">
-			<span style="font-size: 18px; font-weight: bold; font-family: 'Brush Script MT';"><%= v_c.description %></span>
-
+			<span style="font-size: 18px; font-weight: bold; font-family: 'Courier'; color: #adfdff"><%= v_c.description %></span>
+				<br>
 				•&nbsp;<%= link_to 'Edit VC', edit_vim_command_path(:id => v_c.id) %><br>
 				•&nbsp;<%= link_to 'Delete VC', vim_command_path(:id => v_c.id), method: :delete, data: { confirm: 'Are you sure?' } %><br>
 		</div>
