@@ -3,19 +3,20 @@
 <span style="display: none;" id="vim_ids"><%= @vim_commands.ids %></span>
 
 
-<% @vim_commands.each_with_index do |v_c, index| %>
-	<div class="container">
-		<span class="vim_command_title"><%= v_c.command %></span>
-		<br>
-		<%= image_tag("#{v_c.img_example_before}", 
-				:onmouseover => "this.src='assets/#{v_c.img_example}'", 
-				:onmouseout => "this.src='assets/#{v_c.img_example_before}'", 
-				:size => "50%xauto") %>
-				<!--:class => "vim_cards") %-->
-		<br>
-		<span style="font-size: 18px; font-weight: bold; font-family: 'Courier'; color: #adfdff"><%= v_c.description %></span>		
-	</div>
-<% end %>
+<div class="container">
+	<% @vim_commands.each_with_index do |v_c, index| %>
+			<span class="vim_command_title"><%= v_c.command %></span>
+			<br>
+			<%= image_tag("#{v_c.img_example_before}", 
+					:onmouseover => "this.src='assets/#{v_c.img_example}'", 
+					:onmouseout => "this.src='assets/#{v_c.img_example_before}'", 
+					:size => "80x30") 
+			%>
+			<br>
+			<span style="font-size: 18px; font-weight: bold; font-family: 'Courier'; color: #adfdff"><%= v_c.description %></span>
+	<% end %>
+</div>
+
 
 
 <!--% @vim_commands.each do |v_c| %>
