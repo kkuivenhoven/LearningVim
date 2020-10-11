@@ -8,11 +8,13 @@
 	<% @vim_commands.each_with_index do |v_c, index| %>
 			<span class="vim_command_title"><%= v_c.command %></span>
 			<br>
-			<%= image_tag("#{v_c.img_example_before}", 
-					:onmouseover => "this.src='assets/#{v_c.img_example}'", 
-					:onmouseout => "this.src='assets/#{v_c.img_example_before}'", 
-				  :height => "80", :width => "auto" ) 
-			%>
+			<div style="max-width: 75%; overflow: hidden">
+				<%= image_tag("#{v_c.img_example_before}", 
+						:onmouseover => "this.src='assets/#{v_c.img_example}'", 
+						:onmouseout => "this.src='assets/#{v_c.img_example_before}'", 
+						:height => "300", :width => "auto" ) 
+				%>
+			</div>
 			<br>
 			<span style="font-size: 18px; font-weight: bold; font-family: 'Courier'; color: #adfdff"><%= v_c.description %></span>
 			<br><br>
