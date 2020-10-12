@@ -8,7 +8,10 @@
 	<% @vim_commands.each_with_index do |v_c, index| %>
 			<span class="vim_command_title"><%= v_c.command %></span>
 			<br>
-			<span class="vim_description"><%= v_c.description %></span>
+			<!--span class="vim_description">%= v_c.description %></span-->
+			<span style="font-size: 18px; font-weight: bold; font-family: 'Courier'; color: #adfdff; display: inline-block; padding-bottom: 10px;">
+				<%= v_c.description %>
+			</span>
 			<br>
 			<div style="max-width: 75%; overflow: hidden">
 				<%= image_tag("#{v_c.img_example_before}", 
