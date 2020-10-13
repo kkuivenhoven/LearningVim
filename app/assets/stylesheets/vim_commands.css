@@ -1,6 +1,5 @@
 
 
-/*
 .vim_description {
 	font-size: 18px;
 	font-weight: bold;
@@ -9,7 +8,6 @@
 	display: inline-block;
 	padding-bottom: 10px;
 }
-*/
 
 
 .test {
@@ -26,6 +24,7 @@
 }
 
 
+/*
 .vim_command_post {
 	a {
 		color: #ffd6ad;
@@ -43,5 +42,5 @@
 	height: 175px;
 	overflow: scroll;
 }
-
+*/
 
