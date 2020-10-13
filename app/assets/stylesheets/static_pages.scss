@@ -4,19 +4,19 @@
 	font-family: "Brush Script MT";
 	height: 100%;
 	width: auto;
-	position: fixed; // ensures that the navbar extends from top to bottom of webpage
+	position: fixed; /* ensures that the navbar extends from top to bottom of webpage */
 	z-index: 1;
 	top: 0;
 	left: 0;
 	background-color: #111;
 	overflow-x: hidden;
-	padding-top: 20px; // lowers nav links
+	padding-top: 20px; /* lowers nav links */
 	a {
-		// text-align: center;
+		/* text-align: center; */
 		padding: 10px 10px 10px 10px;
 		text-decoration: none;
 		font-size: 25px;
-		color: #adfdff; // #818181;
+		color: #adfdff; /* #818181; */
 		display: block;
 	}
 	a:hover {

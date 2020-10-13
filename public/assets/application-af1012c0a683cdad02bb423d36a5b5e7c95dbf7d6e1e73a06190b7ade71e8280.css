@@ -1,0 +1,310 @@
+/* 
+ * Place all the styles related to the Blogs controller here.
+ * They will automatically be included in application.css.
+ * You can use Sass (SCSS) here: http://sass-lang.com/
+ * Sources:
+ * 		glow effect: https://designshack.net/articles/css/12-fun-css-text-shadows-you-can-copy-and-paste/
+*/
+
+
+
+.new_blog_post_submit {
+	width: 475px;
+	color: rgba(168,178,178,1);
+	background-color: #323232;
+	border-radius: 5px 5px 5px 5px;
+	border: 2px solid;
+}
+
+.new_blog_post_submit:hover {
+	transition: 1s;
+	border-radius: 5px 5px 5px 5px;
+	border: 2px solid;
+	border-color: #adfdff;
+	background-color: #323232;
+	color: rgba(168,178,178,1);
+}
+
+.new_blog_post_header {
+	font-size: 75px;
+	color: rgba(173,253,255,0.9);
+	text-shadow: 4px 16px 12px rgba(0,0,0,0.2),
+		0px -10px 70px rgba(255,255,255,0.3);
+	padding-top: 100px;
+	text-align: center;
+	padding-bottom: 50px;
+}
+
+.new_blog_post_form {
+	label {
+		font-size: 37px;
+		color: rgba(173,253,255,0.9);
+		text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+			0px -5px 35px rgba(255,255,255,0.3);
+	}
+	#blog_title {
+		width: 475px;
+	}
+	#blog_post {
+		height: 52px;
+		width: 475px;
+		border-radius: 5px;
+		border: 2px solid #adfdff;
+		max-height: 400px;
+		overflow: auto;
+	}
+}
+
+
+.outer_new_blog_post_container {
+	/* padding-top: 200px; */
+	text-align: center;
+}
+
+.new_blog_post {
+}
+
+input[type=text]{
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	border: 2px solid #adfdff !important;
+	border-radius: 4px;
+}
+
+.edit_btn {
+	color: rgba(168,178,178,1);
+	background-color: #323232;
+	border-radius: 5px 5px 5px 5px;
+	border: 2px solid;
+}
+
+.edit_btn:hover {
+	transition: 1s;
+	border-radius: 5px 5px 5px 5px;
+	border: 2px solid;
+	border-color: #adfdff;
+	background-color: #323232;
+	color: rgba(168,178,178,1);
+	/* background-color: rgba(17,17,17,0.1); */
+}
+
+.new_btn {
+	width: 100%;
+}
+
+.page_header {
+	font-family: "Brush Script MT";
+	padding-top: 50px;
+	text-align: center;
+	padding-bottom: 50px;
+	font-size: 125px;
+	color: rgba(173,253,255,0.9);
+	/* color: red; */
+	text-shadow: 4px 16px 12px rgba(0,0,0,0.2),
+		0px -10px 70px rgba(255,255,255,0.3);
+}
+
+
+.blog_title {
+	color: rgba(173,253,255,0.9);
+	text-shadow: 4px 16px 12px rgba(0,0,0,0.2),
+		0px -10px 70px rgba(255,255,255,0.3);
+}
+
+.blog_title:hover {
+	color: rgba(240,255,255,1);;
+	transition: 2s;
+	text-shadow: 4px 16px 12px rgba(0,0,0,0.2),
+		0px -10px 70px rgba(255,255,255,0.3);
+}
+
+
+.blog_post {
+	padding-top: 10px;
+	box-shadow: inset 0 0 10px #000;
+	font-size: 24px;
+	height: 150px;
+	overflow: scroll;
+	color: rgba(168,178,178,1);
+}
+
+
+
+
+.sidenav {
+	font-family: "Brush Script MT";
+	height: 100%;
+	width: auto;
+	position: fixed; /* ensures that the navbar extends from top to bottom of webpage */
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #111;
+	overflow-x: hidden;
+	padding-top: 20px; /* lowers nav links */
+	a {
+		/* text-align: center; */
+		padding: 10px 10px 10px 10px;
+		text-decoration: none;
+		font-size: 25px;
+		color: #adfdff; /* #818181; */
+		display: block;
+	}
+	a:hover {
+		color: #f1f1f1;
+		transition: 1s;
+	}
+	.nav_search {
+	}
+}
+
+
+body {
+	margin-left: 240px;
+	padding: 0px 10px;
+	background-color: #111;
+}
+
+.test {
+	color: red;
+}
+
+
+
+/**
+	* Source: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_switch
+	*/
+
+/**
+	* the switch -- the box around the slider
+	*/
+
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+}
+
+/**
+	* hide default HTML checkbox
+	*/
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+/**
+	* the slider
+	*/
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(204,204,204,0.25); /* #ccc; */
+	transition: .4s;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	transition: .4s;
+}
+
+input:checked + .slider {
+	background-color: rgba(173,253,255,0.25); /* #2196f3; */
+}
+
+input:focus + .slider {
+	box-shadow: 0 0 1px rgba(173,253,255,0.25); /* #2196f3; */
+}
+
+input:focus + .slider {
+	box-shadow: 0 0 1px rgba(173,253,255,0.25); /* #2196f3; */
+}
+
+input:checked + .slider:before {
+	-webkit-transform: translateX(26px);
+	transform: translateX(26px);
+}
+
+.vim_command_title {
+	width: 100%;
+	font-size: 24px;
+	font-family: "Courier New";
+	font-weight: bold;
+	color: #ffd6ad;
+}
+
+
+.vim_description {
+	font-size: 18px;
+	font-weight: bold;
+	font-family: "Courier";
+	color: #adfdff;
+	display: inline-block;
+	padding-bottom: 10px;
+}
+
+
+
+
+
+/*
+.vim_command_post {
+	a {
+		color: #ffd6ad;
+	}
+	a:hover {
+		color: orange;
+	}
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	-moz-box-shadow: inset 0 0 10px #000;
+	-webkit-box-shadow: inset 0 0 10px #000;
+	box-shadow: inset 0 0 10px #000;
+	font-size: 14px;
+	height: 175px;
+	overflow: scroll;
+}
+*/
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+
+
+@import 'bootstrap';
+/* 
+@import 'static_pages';
+@import 'vim_commands';
+@import 'toggle';
+@import 'blogs';
+@import 'test';
+*/
+
+
