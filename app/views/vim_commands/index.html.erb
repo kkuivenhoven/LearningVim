@@ -3,22 +3,7 @@
 <h1 class="page_header">Vim Commands</h1>
 
 
-<!--style>
-	.vim_description {
-		font-size: 18px;
-		font-weight: bold;
-		font-family: "Courier";
-		color: #adfdff;
-		display: inline-block;
-		padding-bottom: 10px;
-	}
-</style-->
-
-
 <span style="display: none;" id="vim_ids"><%= @vim_commands.ids %></span>
-
-
-<h1 class="test"> I SHOULD BE RED. </h1>
 
 
 <div class="container">
@@ -26,10 +11,6 @@
 			<span class="vim_command_title"><%= v_c.command %></span>
 			<br>
 			<span class="vim_description"><%= v_c.description %></span>
-			<br><br>
-			<span style="font-size: 18px; font-weight: bold; font-family: 'Courier'; color: #adfdff; display: inline-block; padding-bottom: 10px;">
-				<%= v_c.description %>
-			</span>
 			<br>
 			<div style="max-width: 75%; overflow: hidden">
 				<%= image_tag("#{v_c.img_example_before}", 
