@@ -11,4 +11,3 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 Rails.application.config.assets.precompile += %w( vim_commands.js)
 
-Rails.application.config.public_file_server.enabled = true
