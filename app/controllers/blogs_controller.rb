@@ -29,7 +29,13 @@ class BlogsController < ApplicationController
 	end
 
 	def edit
-		@blog = Blog.find(params[:id])
+		authenticate_or_request_with_http_basic do |username, password|
+			if(username == "dhh" && password == "secret")
+				@blog = Blog.find(params[:id])
+			else
+				redirect_to root_path
+			end
+		end
 	end
 
 	def update
@@ -42,28 +48,10 @@ class BlogsController < ApplicationController
 	end
 
 	def logout
-		flash[:alert] = "inside logout action"
-		redirect_to root_path
-		return
-=begin
-		self.current_user.forget_me if logged_in?
-		cookies.delete :auth_token
-		reset_session
-		# redirect_to '/', status: 401, flash: "You have been logged out."
-		# redirect_to '/'#, lash: "You have been logged out."
-		redirect_to root_path #, lash: "You have been logged out."
-		# render :logout, status: 401
-=end
 	end
 
-=begin
 	def destroy 
-		self.current_user.forget_me if logged_in?
-		cookies.delete :auth_token
-		reset_session
-		redirect_to '/', status: 401, flash: "You have been logged out."
 	end
-=end
 
 	private
 		
