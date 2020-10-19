@@ -2,19 +2,23 @@ class VimCommandsController < ApplicationController
 	require 'socket'
 	require 'resolv-replace'
 
+	http_basic_authenticate_with name: "kendra", password: "vimcommand", except: :index
+
 	before_action :getIpAddr
 	
 	def index
 		if params[:commit] == "Search"
-			@vim_commands = VimCommand.where("description like ?", "%#{params[:search]}%")
+			@vim_commands = VimCommand.where("LOWER(description) like ?", "%#{params[:search.downcase]}%")
 		else
 			@vim_commands = VimCommand.all
 		end
 	end
 
+=begin
 	def show
 		# @vim_command = VimCommand.find(params[:id])
 	end
+=end
 
 	def new
 		@vim_command = VimCommand.new
