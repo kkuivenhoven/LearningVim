@@ -20,13 +20,12 @@
 		</span>
 
 		<%= form_tag(vim_commands_path, method: :get) do %>
-			<%= text_field_tag(:search, params[:search], class: 'nav_search') %><br>
+			<%= text_field_tag(:search, params[:search], class: 'nav_search', placeholder: 'Enter a topic') %><br>
 			<%= submit_tag("Search") %>
 		<% end %>
 	</div>
 
 
-	<!--body style="margin-left: 240px; padding: 0px 10px; background-color: #111;"-->
 	<body>
 		<div class="container">
 			<%= yield %>
