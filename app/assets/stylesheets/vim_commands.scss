@@ -1,3 +1,20 @@
+#wrapper {
+	width: 100%;
+	overflow: hidden;
+}
+
+#left {
+	width: 25%;
+	float: left;
+}
+
+#right {
+	width: 50%;
+	overflow: hidden;
+	float: right;
+}
+
+
 .vim_command_title {
 	width: 100%;
 	font-size: 24px;

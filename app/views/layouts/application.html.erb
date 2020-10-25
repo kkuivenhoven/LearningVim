@@ -13,11 +13,16 @@
 	<div class="sidenav">
 		<%= link_to 'Home', root_path, method: :get %>
 		&nbsp;&nbsp;&nbsp;<%= link_to 'Vim Commands'.html_safe, vim_commands_path, method: :get %>
-		&nbsp;&nbsp;&nbsp;<%= link_to 'New Vim Command'.html_safe, new_vim_command_path, method: :get %>
-		<span style="display: none;">
-			&nbsp;&nbsp;&nbsp;<%= link_to 'Blog'.html_safe, blogs_path, method: :get %>
+		<% if logged_in? %>
+			&nbsp;&nbsp;&nbsp;<%= link_to 'New Vim Command'.html_safe, new_vim_command_path, method: :get %>
+		<% end %>
+		&nbsp;&nbsp;&nbsp;<%= link_to 'Blog'.html_safe, blogs_path, method: :get %>
+		<% if logged_in? %>
 			&nbsp;&nbsp;&nbsp;<%= link_to "New Blog", new_blog_path, method: :get %>
-		</span>
+		<% end %>
+		<% if !logged_in? %>
+			&nbsp;&nbsp;&nbsp;<%= link_to 'Log In'.html_safe, static_pages_login_path, method: :get %>
+		<% end %>
 
 		<%= form_tag(vim_commands_path, method: :get) do %>
 			<%= text_field_tag(:search, params[:search], class: 'nav_search', placeholder: 'Enter a topic') %><br>

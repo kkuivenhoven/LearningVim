@@ -4,7 +4,7 @@
 =end
 
 class BlogsController < ApplicationController
-	http_basic_authenticate_with name: "dhh", password: "secret" #, except: :index
+	# http_basic_authenticate_with name: "dhh", password: "secret" #, except: :index
 
 	def index
 		@blogs = Blog.all
@@ -29,6 +29,7 @@ class BlogsController < ApplicationController
 	end
 
 	def edit
+=begin
 		authenticate_or_request_with_http_basic do |username, password|
 			if(username == "dhh" && password == "secret")
 				@blog = Blog.find(params[:id])
@@ -36,6 +37,7 @@ class BlogsController < ApplicationController
 				redirect_to root_path
 			end
 		end
+=end
 	end
 
 	def update
@@ -45,12 +47,6 @@ class BlogsController < ApplicationController
 	end
 
 	def destroy
-	end
-
-	def logout
-	end
-
-	def destroy 
 	end
 
 	private

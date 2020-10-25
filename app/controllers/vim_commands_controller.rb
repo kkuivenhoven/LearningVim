@@ -2,8 +2,7 @@ class VimCommandsController < ApplicationController
 	require 'socket'
 	require 'resolv-replace'
 
-	http_basic_authenticate_with name: "kendra", password: "vimcommand", except: :index
-
+	before_filter :authenticate, :except => [:index]
 	before_action :getIpAddr
 	
 	def index
