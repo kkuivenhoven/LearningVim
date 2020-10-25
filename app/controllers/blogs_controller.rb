@@ -1,19 +1,12 @@
-=begin
-	documentation for http basic auth:
-		https://api.rubyonrails.org/classes/ActionController/HttpAuthentication/Basic.html
-=end
-
 class BlogsController < ApplicationController
-	# http_basic_authenticate_with name: "dhh", password: "secret" #, except: :index
 
 	def index
 		@blogs = Blog.all
 	end
 
-=begin
 	def show
+		@blog = Blog.find(params[:id])
 	end
-=end
 
 	def new
 		@blog = Blog.new
@@ -29,15 +22,7 @@ class BlogsController < ApplicationController
 	end
 
 	def edit
-=begin
-		authenticate_or_request_with_http_basic do |username, password|
-			if(username == "dhh" && password == "secret")
-				@blog = Blog.find(params[:id])
-			else
-				redirect_to root_path
-			end
-		end
-=end
+		@blog = Blog.find(params[:id])
 	end
 
 	def update
@@ -47,6 +32,8 @@ class BlogsController < ApplicationController
 	end
 
 	def destroy
+		Blog.destroy(params[:id])
+		redirect_to blogs_path
 	end
 
 	private

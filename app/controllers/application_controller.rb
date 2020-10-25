@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
 					session[:logged_in] = true
 				else
 					session[:logged_in] = false
+					redirect_to root_path
 				end
 			end
 		end
