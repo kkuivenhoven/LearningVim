@@ -21,16 +21,18 @@ final result of the vim command will be.
 <div class="container">
 	<% @vim_commands.each_with_index do |v_c, index| %>
 			<div id="wrapper">
-				<div id="left">
-					<span class="vim_command_title"><%= v_c.command %></span>
-					<br>
-					<span class="vim_description"><%= v_c.description %></span>
-				</div>
-				<div id="right">
-					<% if logged_in? %>
-						<%= link_to "Edit", edit_vim_command_path(:id => v_c.id), class: "btn btn-primary" %><br>
-					<% end %>
-				</div>
+				<% if logged_in? %>
+					<div id="left">
+				<% end %>
+						<span class="vim_command_title"><%= v_c.command %></span>
+						<br>
+						<span class="vim_description"><%= v_c.description %></span>
+				<% if logged_in? %>
+					</div>
+					<div id="right">
+							<%= link_to "Edit", edit_vim_command_path(:id => v_c.id), class: "btn btn-primary" %><br>
+					</div>
+				<% end %>
 			</div>
 
 			<div style="max-width: 75%; overflow: hidden;">
