@@ -27,7 +27,9 @@ final result of the vim command will be.
 					<span class="vim_description"><%= v_c.description %></span>
 				</div>
 				<div id="right">
-					<%= link_to "Edit", edit_vim_command_path(:id => v_c.id), class: "btn btn-primary" %><br>
+					<% if logged_in? %>
+						<%= link_to "Edit", edit_vim_command_path(:id => v_c.id), class: "btn btn-primary" %><br>
+					<% end %>
 				</div>
 			</div>
 

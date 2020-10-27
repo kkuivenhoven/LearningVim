@@ -88,11 +88,14 @@ input[type=text]{
 	/* background-color: rgba(17,17,17,0.1); */
 }
 
+
 .new_btn {
 	width: 100%;
 }
 
+
 .page_header {
+	text-transform: capitalize;
 	font-family: "Brush Script MT";
 	padding-top: 50px;
 	text-align: center;
@@ -131,3 +134,12 @@ input[type=text]{
 }
 
 
+.post {
+  font-size: 18px; 
+  font-weight: bold; 
+  font-family: 'Courier'; 
+  color: #ccab8a; 
+  display: inline-block; 
+  padding-bottom: 10px;
+  text-indent: 50px;
+}
