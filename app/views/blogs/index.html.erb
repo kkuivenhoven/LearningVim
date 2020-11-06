@@ -12,6 +12,11 @@
 					<%= blog.post %>
 				</span>
 				<br>
+				<span>
+					<% blog.hash_tags.each do |hash_tag| %>
+						<%= link_to "##{hash_tag.name}", hash_tag_path(hash_tag.id) %>
+					<% end %>
+				</span>
 				<%= link_to "Show Blog", blog_path(blog.id), :class => "btn btn-light" %> 
 				<% if logged_in? %>
 					<%= link_to "Delete Blog", blog_path(blog.id), method: :delete, data: { conrim: "Are you sure?" }, :class => "btn btn-light" %> 
@@ -22,21 +27,4 @@
 	<% end %>
 </div>
 
-<!--% @blogs.each do |blog| %>
-
-	<span style="font-size: 32px;">
-		<span class="blog_title">%= blog.title %></span>
-		&nbsp;&nbsp;
-		% if logged_in? %>
-			%= link_to "Edit Blog", edit_blog_path(blog.id), :class => "btn btn-light edit_btn" %> 
-		% end %>
-		<br>
-	</span>
-
-
-	<div class="blog_post">
-		%= blog.post %><br>
-	</div>
-
- end %-->
 

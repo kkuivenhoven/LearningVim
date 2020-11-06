@@ -143,3 +143,20 @@ input[type=text]{
   padding-bottom: 10px;
   text-indent: 50px;
 }
+
+
+#wrapper {
+	width: 100%;
+	overflow: hidden;
+}
+
+
+#first {
+	width: 75%;
+	float: left;
+}
+
+#second {
+	width: 25%;
+	overflow: hidden;
+}
