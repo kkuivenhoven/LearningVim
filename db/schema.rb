@@ -10,13 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190628040750) do
+ActiveRecord::Schema.define(version: 20201106174711) do
 
   create_table "blogs", force: :cascade do |t|
     t.string   "title"
     t.string   "post"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "hash_tags", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "taggings", force: :cascade do |t|
+    t.integer  "blog_id"
+    t.integer  "hash_tag_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["blog_id"], name: "index_taggings_on_blog_id"
+    t.index ["hash_tag_id"], name: "index_taggings_on_hash_tag_id"
   end
 
   create_table "vim_commands", force: :cascade do |t|

@@ -14,6 +14,14 @@ class BlogsController < ApplicationController
 
 	def create
 		@blog = Blog.new(blog_params)
+		@hash_tags = params["blog"]["hash_tags"].split(",")
+		@hash_tags.each do |hash_tag|
+			if HashTag.where(name: hash_tag).count != 0
+				@blog.hash_tags << HashTag.where(name: hash_tag)
+			else
+				@blog.hash_tags << HashTag.new(name: hash_tag)
+			end
+		end
 		if @blog.save
 			redirect_to :action => 'index'
 		else

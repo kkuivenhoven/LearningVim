@@ -1,0 +1,10 @@
+  .card {
+    background-color: rgba(253,255,173, 0.75);
+    border: double;
+    border-width: 10px;
+    border-radius: 15px 15px 15px 15px;
+  }
+
+  .card:hover {
+    background-color: rgba(253,255,173, 0.85);
+  }

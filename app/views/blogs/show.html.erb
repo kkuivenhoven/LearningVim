@@ -2,6 +2,13 @@
 
 <br>
 
+<span>
+	<% @blog.hash_tags.each do |hash_tag| %>
+		<%= hash_tag.name %><br>
+		<%= link_to "#{hash_tag.name}", hash_tag_path(hash_tag.id), :class => "btn btn-light" %>
+	<% end %>
+</span>
+
 <span class="post">
 	<%= @blog.post %>
 </span>

@@ -1,0 +1,5 @@
+<h1 class="page_header">All Hash Tags</h1>
+
+<% @hash_tags.each do |hash_tag| %>
+	<%= link_to "#{hash_tag.name}", hash_tag_path(hash_tag.id), :class => "btn btn-light" %>
+<% end %>

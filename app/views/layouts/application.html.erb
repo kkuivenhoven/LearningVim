@@ -17,6 +17,7 @@
 			&nbsp;&nbsp;&nbsp;<%= link_to 'New Vim Command'.html_safe, new_vim_command_path, method: :get %>
 		<% end %>
 		&nbsp;&nbsp;&nbsp;<%= link_to 'Blog'.html_safe, blogs_path, method: :get %>
+		&nbsp;&nbsp;&nbsp;<%= link_to 'Hash Tag'.html_safe, hash_tags_path, method: :get %>
 		<% if logged_in? %>
 			&nbsp;&nbsp;&nbsp;<%= link_to "New Blog", new_blog_path, method: :get %>
 		<% end %>

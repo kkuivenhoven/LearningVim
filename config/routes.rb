@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
 	resources :vim_commands
 	resources :blogs
+	resources :hash_tags
 
 	get 'static_pages/login'
 

@@ -1,0 +1,23 @@
+
+<h1 class="page_header">#<%= @hash_tag.name %></h1>
+
+
+
+<div class="card-columns">
+  <% @hash_tag.blogs.each do |blog| %>
+    <div class="card">  
+      <div class="card-body text-center">
+        <h5><%= blog.title %></h5>
+        <span style="display: block; width: 200px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
+          <%= blog.post %>
+        </span>
+        <br>
+        <%= link_to "Show Blog", blog_path(blog.id), :class => "btn btn-light" %>  
+        <% if logged_in? %>
+          <%= link_to "Delete Blog", blog_path(blog.id), method: :delete, data: { conrim: "Are you sure?" }, :class => "btn btn-light" %>  
+          <%= link_to "Edit Blog", edit_blog_path(blog.id), :class => "btn btn-light edit_btn" %>  
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
