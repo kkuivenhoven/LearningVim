@@ -10465,12 +10465,12 @@ body {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: rgba(128, 128, 128, 0.75);
   overflow-x: hidden;
   padding-top: 20px;
   /* lowers nav links */
 }
-/* line 15, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/static_pages.scss */
+/* line 16, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/static_pages.scss */
 .sidenav a {
   /* text-align: center; */
   padding: 10px 10px 10px 10px;
@@ -10480,27 +10480,27 @@ body {
   /* #818181; */
   display: block;
 }
-/* line 23, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/static_pages.scss */
+/* line 24, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/static_pages.scss */
 .sidenav a:hover {
   color: #f1f1f1;
   transition: 1s;
 }
 
-/* line 32, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/static_pages.scss */
+/* line 33, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/static_pages.scss */
 body {
   margin-left: 240px;
   padding: 0px 10px;
   background-color: #111;
 }
 
-/* line 41, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/static_pages.scss */
+/* line 42, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/static_pages.scss */
 .about_div {
-  box-shadow: inset 0 0 10px #000000;
-  border: 1px 1px 1px 1px #000000;
+  box-shadow: inset 0 0 10px rgba(105, 105, 105, 0.75);
+  border: 1px 1px 1px 1px rgba(105, 105, 105, 0.75);
   border-radius: 5px;
   background-color: rgba(112, 112, 112, 0.75);
 }
-/* line 48, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/static_pages.scss */
+/* line 49, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/static_pages.scss */
 .about_div .about {
   font-family: "Courier";
   line-height: 2;
@@ -10508,7 +10508,7 @@ body {
   color: #ffd6ad;
   text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.5), 0px -10px 70px rgba(255, 255, 255, 0.3);
   overflow-wrap: break-word;
-  border: 5px 5px 5px 5px;
+  margin: 25px 25px 25px 25px;
 }
 
 /* line 1, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/vim_commands.scss */
@@ -10771,21 +10771,23 @@ input[type=text] {
   display: inline-block;
   padding-bottom: 10px;
   text-indent: 50px;
+  margin: 25px 25px 25px 25px;
+  box-shadow: inset 0 0 10px rgba(105, 105, 105, 0.75);
 }
 
-/* line 134, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/blogs.scss */
+/* line 138, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/blogs.scss */
 #wrapper {
   width: 100%;
   overflow: hidden;
 }
 
-/* line 140, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/blogs.scss */
+/* line 144, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/blogs.scss */
 #first {
   width: 75%;
   float: left;
 }
 
-/* line 145, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/blogs.scss */
+/* line 149, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/blogs.scss */
 #second {
   width: 25%;
   overflow: hidden;
