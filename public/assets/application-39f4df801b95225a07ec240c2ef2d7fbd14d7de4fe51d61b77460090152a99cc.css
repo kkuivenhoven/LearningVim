@@ -10438,6 +10438,23 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6;
   }
 }
+/* line 1, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/layout.scss */
+body {
+  background: linear-gradient(0deg, rgba(128, 128, 128, 0.75), rgba(128, 128, 128, 0.75)), url(/assets/background_image_01-7e7f66db1b842537dce3b980589cc7887d5e9a966f6485e8a7d6774ff8c2dade.jpg);
+}
+
+/* line 6, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/layout.scss */
+.page_header {
+  text-transform: capitalize;
+  font-family: "Brush Script MT";
+  padding-top: 50px;
+  text-align: center;
+  padding-bottom: 50px;
+  font-size: 125px;
+  color: #adfdff;
+  text-shadow: 4px 16px 12px rgba(0, 0, 0, 0.5), 0px -10px 70px rgba(255, 255, 255, 0.3);
+}
+
 /* line 3, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/static_pages.scss */
 .sidenav {
   font-family: "Courier";
@@ -10474,6 +10491,21 @@ body {
   margin-left: 240px;
   padding: 0px 10px;
   background-color: #111;
+}
+
+/* line 39, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/static_pages.scss */
+.about {
+  font-family: "Courier";
+  line-height: 2;
+  text-indent: 50px;
+  color: #ffd6ad;
+  text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.5), 0px -10px 70px rgba(255, 255, 255, 0.3);
+}
+
+/* line 49, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/static_pages.scss */
+.about_div {
+  box-shadow: inset 0 0 10px #000000;
+  border: 1px 1px 1px 1px #000000;
 }
 
 /* line 1, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/vim_commands.scss */
@@ -10705,32 +10737,19 @@ input[type=text] {
 }
 
 /* line 97, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/blogs.scss */
-.page_header {
-  text-transform: capitalize;
-  font-family: "Brush Script MT";
-  padding-top: 50px;
-  text-align: center;
-  padding-bottom: 50px;
-  font-size: 125px;
-  color: rgba(173, 253, 255, 0.9);
-  /* color: red; */
-  text-shadow: 4px 16px 12px rgba(0, 0, 0, 0.2), 0px -10px 70px rgba(255, 255, 255, 0.3);
-}
-
-/* line 111, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/blogs.scss */
 .blog_title {
   color: rgba(173, 253, 255, 0.9);
   text-shadow: 4px 16px 12px rgba(0, 0, 0, 0.2), 0px -10px 70px rgba(255, 255, 255, 0.3);
 }
 
-/* line 117, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/blogs.scss */
+/* line 103, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/blogs.scss */
 .blog_title:hover {
   color: azure;
   transition: 2s;
   text-shadow: 4px 16px 12px rgba(0, 0, 0, 0.2), 0px -10px 70px rgba(255, 255, 255, 0.3);
 }
 
-/* line 125, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/blogs.scss */
+/* line 111, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/blogs.scss */
 .blog_post {
   padding-top: 10px;
   box-shadow: inset 0 0 10px #000;
@@ -10740,7 +10759,7 @@ input[type=text] {
   color: #a8b2b2;
 }
 
-/* line 137, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/blogs.scss */
+/* line 123, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/blogs.scss */
 .post {
   font-size: 18px;
   font-weight: bold;
@@ -10751,7 +10770,33 @@ input[type=text] {
   text-indent: 50px;
 }
 
-/* line 1, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/test.scss */
-.test {
-  color: red;
+/* line 134, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/blogs.scss */
+#wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* line 140, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/blogs.scss */
+#first {
+  width: 75%;
+  float: left;
+}
+
+/* line 145, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/blogs.scss */
+#second {
+  width: 25%;
+  overflow: hidden;
+}
+
+/* line 1, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/cards.scss */
+.card {
+  background-color: rgba(253, 255, 173, 0.75);
+  border: double;
+  border-width: 10px;
+  border-radius: 15px 15px 15px 15px;
+}
+
+/* line 8, /Users/kendrakuivenhoven/LearningVim/app/assets/stylesheets/cards.scss */
+.card:hover {
+  background-color: rgba(253, 255, 173, 0.85);
 }

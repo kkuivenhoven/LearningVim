@@ -2,3 +2,18 @@ body {
 	// background-image: image-url("background_image_01.jpeg");
 	background: linear-gradient(0deg, rgba(128, 128, 128, 0.75), rgba(128, 128, 128, 0.75)), image-url("background_image_01.jpeg");
 }
+
+.page_header {
+	text-transform: capitalize;
+	font-family: "Brush Script MT";
+	padding-top: 50px;
+	text-align: center;
+	padding-bottom: 50px;
+	font-size: 125px;
+	// color: rgba(173,253,255,0.9);
+	color: rgba(173,253,255,1);
+	// text-shadow: 4px 16px 12px rgba(0,0,0,0.2),
+	text-shadow: 4px 16px 12px rgba(0,0,0,0.5),
+		0px -10px 70px rgba(255,255,255,0.3);
+}
+
