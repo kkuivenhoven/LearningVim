@@ -36,7 +36,6 @@ class BlogsController < ApplicationController
 	def update
 		@blog = Blog.find(params[:id])
 		@hash_tag_ids = params["blog"]["hash_tag_ids"]
-		byebug
 		@blog.update(title: params[:blog][:title], post: params[:blog][:post])
 		redirect_to :action => 'index'
 	end
