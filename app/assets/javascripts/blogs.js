@@ -112,3 +112,6 @@ function on_key_stroke(e){
 }	
 
 
+function onCardClick(id) {
+	window.location.href = ("/blogs/" + id);
+}

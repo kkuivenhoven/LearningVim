@@ -1,12 +1,18 @@
-.card {
-  // background-color: rgba(253,255,173, 0.75);
-  background-color: rgba(173,253,255, 0.75);
-  // border: double;
-  // border-width: 10px;
-  // border-radius: 15px 15px 15px 15px;
-}
+.card-columns {
+	.card {
+		// background-color: rgba(253,255,173, 0.75);
+		background-color: rgba(173,253,255, 0.85);
+		// border: double;
+		border-width: 10px;
+		border-radius: 15px 15px 15px 15px;
+		border-color: rgba(173,253,255, 0.85);
+		transition: 0.3s;
+	}
 
-.card:hover {
-  // background-color: rgba(253,255,173, 0.85);
-  background-color: rgba(173,253,255, 0.85);
+	.card:hover {
+		// background-color: rgba(253,255,173, 0.85);
+		// background-color: rgba(173,253,255, 0.75);
+		background-color: rgba(128,128,128, 0.75);
+		color: #ffd6ad;
+	}
 }
