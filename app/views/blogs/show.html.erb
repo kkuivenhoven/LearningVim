@@ -1,9 +1,109 @@
+<style>
+		.leftbox {
+			float: left;
+			background: #11ffee00;
+			width: 33%;
+			/* height: 280px; */
+			text-align: center;
+			border-right: 5px solid rgba(0, 0, 0, 0.25);
+			border-left: 5px solid rgba(0, 0, 0, 0.25);
+		}
+		.middlebox {
+			float: left;
+			background: #11ffee00;
+			width: 33%;
+			/* height: 280px; */
+			text-align: center;
+			border-right: 5px solid rgba(0, 0, 0, 0.25);
+		}
+		.rightbox {
+			float: right; 
+			background: #11ffee00;
+			width: 33%;
+			/* height: 280px; */
+			text-align: center;
+			border-right: 5px solid rgba(0, 0, 0, 0.25);
+		}	
+		.divHashTagBtn { 
+			color: black;
+			text-shadow: 8px 8px 20px black;
+			font-size: 25px;
+			color: rgba(0, 0, 0, 0.75);
+		}
+		#parent {
+			display: flex;
+		}
+		#narrow {
+			width: 200px;
+			background: #11ffee00;
+			text-align: center;
+		}
+		#wide {
+			flex: 1;
+			background: #11ffee00;
+		}
+</style>
+
 <h1 class="page_header"><%= @blog.title %></h1>
 
 <br>
 
-<div id="wrapper">
+<!--div id="wrapper">
 	<div id="first">
+		<div class="post">
+			<span class="post_text">
+				%= @blog.post %>
+			</span>
+		</div>
+	</div>
+
+	<div id="second"-->
+		<!--span>
+			% @hash_tags.each do |hash_tag| %>
+				% hash_tag.each do |hash| %>
+					%= hash.inspect %><br><br>
+				% end %>
+			% end %>
+			<br><br><br><br>
+			% @blog.hash_tags.each do |hash_tag| %>
+				%= link_to "##{hash_tag.name}", hash_tag_path(hash_tag.id), :class => "btn btn-light" %>
+			% end %-->
+			<!--% @blog_array.each do |blog| %>
+				%= blog %>
+			% end %>
+		</span-->
+	<!--/div> 
+</div-->
+
+<!--div>
+	<div class="leftbox">
+		% @hash_tags[0].each do |hash_tag| %>
+			% if hash_tag != nil %>
+				%= link_to "##{hash_tag.name}", hash_tag_path(hash_tag.id), :class => "divHashTagBtn" %> <br>
+			% end %>
+		% end %>
+	</div>
+
+	<div class="middlebox">
+		% @hash_tags[1].each do |hash_tag| %>
+			% if hash_tag != nil %>
+				%= link_to "##{hash_tag.name}", hash_tag_path(hash_tag.id), :class => "divHashTagBtn" %> <br>
+			% end %>
+		% end %>
+	</div>
+
+	<div class="rightbox">
+		% @hash_tags[2].each do |hash_tag| %>
+			% if hash_tag != nil %>
+				%= link_to "##{hash_tag.name}", hash_tag_path(hash_tag.id), :class => "divHashTagBtn" %> <br>
+			% end %>
+		% end %>
+	</div>
+</div-->
+
+
+<div id="parent">
+	<div id="wide">    
 		<div class="post">
 			<span class="post_text">
 				<%= @blog.post %>
@@ -11,12 +111,11 @@
 		</div>
 	</div>
 
-	<div id="second">
-		<span>
+	<div id="narrow">
 			<% @blog.hash_tags.each do |hash_tag| %>
-				<%= link_to "##{hash_tag.name}", hash_tag_path(hash_tag.id), :class => "btn btn-light" %>
+				<%= link_to "##{hash_tag.name}", hash_tag_path(hash_tag.id), :class => "divHashTagBtn" %><br>
 			<% end %>
-		</span>
-	</div> 
+	</div>
 </div>
 
+<br><br><br>

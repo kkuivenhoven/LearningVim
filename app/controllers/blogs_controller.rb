@@ -6,6 +6,7 @@ class BlogsController < ApplicationController
 
 	def show
 		@blog = Blog.find(params[:id])
+		@hash_tags = @blog.hash_tags.in_groups(3)
 	end
 
 	def new
