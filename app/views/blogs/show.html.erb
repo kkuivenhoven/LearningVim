@@ -113,7 +113,7 @@
 	<div id="wide">    
 		<div class="post">
 			<span class="post_text">
-				<%= @blog.post %>
+				<%= @blog.post.html_safe %>
 			</span>
 		</div>
 	</div>
@@ -124,5 +124,4 @@
 			<% end %>
 	</div>
 </div>
-
 <br><br><br>
