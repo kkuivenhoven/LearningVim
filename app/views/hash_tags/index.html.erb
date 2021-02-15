@@ -1,61 +1,172 @@
 <h1 class="page_header">All Hash Tags</h1>
 
-<!--% @hash_tags.each do |hash_tag| %>
-	%= link_to "#{hash_tag.name}", hash_tag_path(hash_tag.id), :class => "btn btn-light" %>
-end %-->
+<!-- https://codepen.io/dannievinther/pen/LaJoaW -->
 
-<% @hash_tags.each do |hash_tag| %>
-	<!--%= link_to(hash_tag_path(hash_tag.id)) do %>
-			<div class="hash_tag_index_div">
-				<span class="hash_tag_link">
-					%= hash_tag.name %>
+<style>
+
+/* .p-one {
+	overflow: hidden;
+	padding: 1em;
+	width: 25em;
+  height: 25em;
+	border-radius: 50%;
+	// background: #352961; //
+	background: rgba(128, 128, 128, 0.85);;
+  color: red;
+  hyphens: auto;
+  font-weight: 300;
+  // text-align: justify; //
+  text-align-last: center;
+}
+
+
+p {
+	overflow: hidden;
+	padding: 1em;
+	width: 25em;
+  height: 25em;
+	border-radius: 50%;
+	// background: #352961; //
+	background: rgba(128, 128, 128, 0.85);;
+  color: #e6b2c6;
+  hyphens: auto;
+  font-weight: 300;
+  // text-align: justify; //
+  text-align-last: center;
+}
+
+[aria-hidden='true'] {
+  display: contents;
+}
+
+[aria-hidden='true']:before,
+[aria-hidden='true']:after {
+  content: "";
+  float: left;
+  width: 50%;
+  height: 100%;
+  --bite:
+    radial-gradient(
+      farthest-side at var(--pos-x, 100%),
+      transparent 99%,
+      red);
+  shape-outside: var(--bite);
+}
+
+[aria-hidden='true']:after {
+  float: right;
+  --pos-x: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  place-items: center;
+} */
+
+</style>
+
+
+<center>
+		<!--span aria-hidden="true"></span>
+			% @hash_tags.each do |hash_tag| %>
+					% @hashTagCount = hash_tag.blogs.all.count %>
+					% if @hashTagCount == 1 %>
+						%= link_to "##{hash_tag.name}", hash_tag_path(hash_tag.id), :class => 'hash_tag_link hash_tag_link_tier_one' %> 
+						<p class="p-one" lang="en">
+							<span class="badge" style="font-size: 12px;">
+								%= hash_tag.blogs.all.count %>
+							</span>
+						</p>
+					% elsif @hashTagCount == 2 %>
+						<= link_to "##{hash_tag.name}", hash_tag_path(hash_tag.id), :class => 'hash_tag_link hash_tag_link_tier_two' %> 
+						<p class="p-two" lang="en">
+							<span class="badge" style="font-size: 16px;">
+								<= hash_tag.blogs.all.count %>
+							</span>
+						</p>
+					% elsif @hashTagCount == 3 %>
+						<p class="p-three" lang="en">
+							%= link_to "##{hash_tag.name}", hash_tag_path(hash_tag.id), :class => 'hash_tag_link hash_tag_link_tier_three' %> 
+							<span class="badge" style="font-size: 20px;">
+								%= hash_tag.blogs.all.count %>
+							</span>
+						</p>
+					% elsif @hashTagCount == 4 %>
+						<p class="p-four" lang="en">
+							%= link_to "##{hash_tag.name}", hash_tag_path(hash_tag.id), :class => 'hash_tag_link hash_tag_link_tier_four' %> 
+							<span class="badge" style="font-size: 24px;">
+								%= hash_tag.blogs.all.count %>
+							</span>
+						</p>
+					% elsif @hashTagCount == 5 %>
+						<p class="p-five" lang="en">
+							%= link_to "##{hash_tag.name}", hash_tag_path(hash_tag.id), :class => 'hash_tag_link hash_tag_link_tier_five' %> 
+							<span class="badge" style="font-size: 28px;">
+								%= hash_tag.blogs.all.count %>
+							</span>
+						</p>
+					% elsif @hashTagCount == 6 %>
+						<p class="p-six" lang="en">
+							%= link_to "##{hash_tag.name}", hash_tag_path(hash_tag.id), :class => 'hash_tag_link hash_tag_link_tier_six' %> 
+							<span class="badge" style="font-size: 32px;">
+							%= hash_tag.blogs.all.count %>
+						</p>
 				</span>
-				<br>
-			  Blog post count: %= hash_tag.blogs.all.count %>
-			</div>	
-	% end %-->
-	<!--a href="#">
-		%= hash_tag.name %> 
-		<span class="badge">
-			%= hash_tag.blogs.all.count %>
-		</span>
-	</a-->
-	<!--%= link_to "##{hash_tag.name}", hash_tag_path(hash_tag.id), :class => 'hash_tag_link' %--> 
-	<!--span class="badge"-->
-		<% @hashTagCount = hash_tag.blogs.all.count %>
-		<% if @hashTagCount == 1 %>
-			<%= link_to "##{hash_tag.name}", hash_tag_path(hash_tag.id), :class => 'hash_tag_link hash_tag_link_tier_one' %> 
-			<span class="badge" style="font-size: 12px;">
-				<%= hash_tag.blogs.all.count %>
-			</span>
-		<% elsif @hashTagCount == 2 %>
-			<%= link_to "##{hash_tag.name}", hash_tag_path(hash_tag.id), :class => 'hash_tag_link hash_tag_link_tier_two' %> 
-			<span class="badge" style="font-size: 16px;">
-				<%= hash_tag.blogs.all.count %>
-			</span>
-		<% elsif @hashTagCount == 3 %>
-			<%= link_to "##{hash_tag.name}", hash_tag_path(hash_tag.id), :class => 'hash_tag_link hash_tag_link_tier_three' %> 
-			<span class="badge" style="font-size: 20px;">
-				<%= hash_tag.blogs.all.count %>
-			</span>
-		<% elsif @hashTagCount == 4 %>
-			<%= link_to "##{hash_tag.name}", hash_tag_path(hash_tag.id), :class => 'hash_tag_link hash_tag_link_tier_four' %> 
-			<span class="badge" style="font-size: 24px;">
-				<%= hash_tag.blogs.all.count %>
-			</span>
-		<% elsif @hashTagCount == 5 %>
-			<%= link_to "##{hash_tag.name}", hash_tag_path(hash_tag.id), :class => 'hash_tag_link hash_tag_link_tier_five' %> 
-			<span class="badge" style="font-size: 28px;">
-				<%= hash_tag.blogs.all.count %>
-			</span>
-		<% elsif @hashTagCount == 6 %>
-			<%= link_to "##{hash_tag.name}", hash_tag_path(hash_tag.id), :class => 'hash_tag_link hash_tag_link_tier_six' %> 
-			<span class="badge" style="font-size: 32px;">
-				<%= hash_tag.blogs.all.count %>
-			</span>
+			% end %>
+			&nbsp;&nbsp;&nbsp;
+		% end %>
+	</p>
+</center-->
+
+
+
+
+<center>
+	<p lang="en">
+		<span aria-hidden="true"></span>
+			<% @hash_tags.each do |hash_tag| %>
+					<% @hashTagCount = hash_tag.blogs.all.count %>
+					<% if @hashTagCount == 1 %>
+						<%= link_to "##{hash_tag.name}", hash_tag_path(hash_tag.id), :class => 'hash_tag_link hash_tag_link_tier_one' %> 
+						<span class="badge" style="font-size: 12px;">
+							<%= hash_tag.blogs.all.count %>
+						</span>
+					<% elsif @hashTagCount == 2 %>
+						<%= link_to "##{hash_tag.name}", hash_tag_path(hash_tag.id), :class => 'hash_tag_link hash_tag_link_tier_two' %> 
+						<span class="badge" style="font-size: 16px;">
+							<%= hash_tag.blogs.all.count %>
+						</span>
+					<% elsif @hashTagCount == 3 %>
+						<%= link_to "##{hash_tag.name}", hash_tag_path(hash_tag.id), :class => 'hash_tag_link hash_tag_link_tier_three' %> 
+						<span class="badge" style="font-size: 20px;">
+							<%= hash_tag.blogs.all.count %>
+						</span>
+					<% elsif @hashTagCount == 4 %>
+						<%= link_to "##{hash_tag.name}", hash_tag_path(hash_tag.id), :class => 'hash_tag_link hash_tag_link_tier_four' %> 
+						<span class="badge" style="font-size: 24px;">
+							<%= hash_tag.blogs.all.count %>
+						</span>
+					<% elsif @hashTagCount == 5 %>
+						<%= link_to "##{hash_tag.name}", hash_tag_path(hash_tag.id), :class => 'hash_tag_link hash_tag_link_tier_five' %> 
+						<span class="badge" style="font-size: 28px;">
+							<%= hash_tag.blogs.all.count %>
+						</span>
+					<% elsif @hashTagCount == 6 %>
+						<%= link_to "##{hash_tag.name}", hash_tag_path(hash_tag.id), :class => 'hash_tag_link hash_tag_link_tier_six' %> 
+						<span class="badge" style="font-size: 32px;">
+					<%= hash_tag.blogs.all.count %>
+				</span>
+			<% end %>
+			&nbsp;&nbsp;&nbsp;
 		<% end %>
-	<!--/span-->
-	&nbsp;&nbsp;&nbsp;
-<% end %>
+	</p>
+</center>
+
+
 
 
