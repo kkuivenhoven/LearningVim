@@ -44,6 +44,7 @@
 			box-shadow: inset 0 0 10px rgba(105, 105, 105, 0.85);
 			border: 1px 1px 1px 1px rgba(105, 105, 105, 0.85); 
 			border-radius: 5px;
+			padding-top: 50px;
 		}
 		#wide {
 			flex: 1;
@@ -111,7 +112,7 @@
 
 <div id="parent">
 	<div id="wide">    
-		<div class="post">
+		<div class="post post_blog_show">
 			<span class="post_text">
 				<%= @blog.post.html_safe %>
 			</span>
