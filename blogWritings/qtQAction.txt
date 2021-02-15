@@ -27,3 +27,38 @@ HashTags:
 - QtCreator
 - QAction
 - QWidget
+
+
+
+
+
+
+
+Blog post with HTML:
+
+Recently, I started to delve into the GUI portion of Qt Creator. If you are familiar with Qt, then you are familiar with the signals/slot mechanism. When you are creating a Qt GUI program, you will use signals/slots quite frequently. Possibly more than just a command line program. 
+<br><br>
+&emsp; With a Qt button or menu action, one can configure it to have a slot that is called upon a click action. Of course, you need to be able to track where that click came from. 
+<br><br>
+&emsp; QPushButton is arguably easier than QAction to be able to get the QWidget window it is a child of. This is what we will discuss today is how to get the QWidget window of a QAction. 
+<br><br>
+&emsp; The first step is to cast the sender() function via qobject_cast to a QAction. i.e.
+<br><br>
+<code>
+  QAction *actionSender = qobject_cast<QAction*>(sender());
+</code>
+<br><br>
+&emsp; The second step is to obtain the associated widgets of QAction.
+<br><br>
+<code>
+  QList<QWidget*> actionWidgets = actionSender->associatedWidgets();
+</code>
+<br><br>
+&emsp; Now, typically, what I have seen is that the length of thee obtained list equals (or is) one. Thus, we can do the following:
+  <br><br>
+<code>
+  QWidget *tmp = actionWidgets.at(0);<br>
+  QWidget *currentWindow = tmp->parentWidget();
+</code>
+<br><br>
+&emsp; Thus, now you have the QWidget window that is associated with the QAction. This allows you, the programmer, to do things like close the window or find it's associated child widgets.
