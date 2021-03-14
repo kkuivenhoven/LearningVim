@@ -42,8 +42,12 @@ class BlogsController < ApplicationController
 	end
 
 	def destroy
-		Blog.destroy(params[:id])
-		redirect_to blogs_path
+		@blog = Blog.find(params[:id])
+		@blog.hash_tags.destroy_all
+		@blog.destroy
+		redirect_to root
+		# Blog.destroy(params[:id])
+		# redirect_to blogs_path
 	end
 
 	private
