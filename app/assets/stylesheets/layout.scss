@@ -3,6 +3,7 @@ body {
 	background: linear-gradient(0deg, rgba(128, 128, 128, 0.75), rgba(128, 128, 128, 0.75)), image-url("background_image_01.jpeg");
 // 	background-repeat: no-repeat;
 	background-size: cover;
+	background-attachment: fixed;
 }
 
 .page_header {
