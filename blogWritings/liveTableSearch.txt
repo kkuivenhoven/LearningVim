@@ -1,0 +1,189 @@
+ Are you interested in having a live update on your data table in your Rails web app as you type into an input field? I was! I groveled around Stackoverflow, the interweb, asking all over Discord for about a week and a half various questions at points where I was stuck. Eventually, I figured it out! So, I wrote this blog in order to help someone else out.  Your live search will look similar to a normal remote: true method in Rails. However, in your HTML view, be sure to use the following input field. I also display my data that will be searched in a table underneath the input tag.  app/views/statics/renovated_search.html.erb  <input type="text" id="renovated_search" name="renovated_search" class="search" value=""><br><br>
+
+<div id="blogpost-table-two">
+  <table>
+    <thead>
+      <tr>
+        <th>The Name</th>
+      </tr>
+    </thead>
+
+    <tbody>
+       <% @rhs_coches.each do |coche| %>
+        <tr>
+          <td><%= coche.car %></td>
+        </tr>
+       <% end %>
+    </tbody>
+  </table>
+</div>  I recommend refreshing your page to make sure that it is all working before continuing forward.   Next, in your app/javascript/packs/on_key_up_search.js, you will use the jQuery .on() method to attach an event to the input tag that is above. Also, you must use 'turbolinks:load' or this function will not load. The method I for detecting each keypress and submitting it to the controller action looks like this:  $(document).on('turbolinks:load', function() {
+  $('input[name="renovated_search"]').on('keyup', function(event) {
+    var newValue = $("#renovated_search").val();
+
+    var result = null;
+    var dictionary = {}; 
+    var scriptUrl = "/statics/retrieve_searches";
+    var myObj = {"SearchPhrase": newValue};
+
+    Rails.ajax({
+      type: "POST",
+      url: scriptUrl,
+      data: new URLSearchParams(myObj).toString()
+    }); 
+     
+  }); 
+});
+ Side note: I tried many times to use a normal jQuery Ajax request. However, I kept running into issues with silent fails for rendering my js.erb and partial. Once I switched to the Rails Ajax request, I got instant success. Also, the URLSearchParams translates the key value pairs into a query parameter string.   I am posting this method to a Statics (controller) retrieve_searches (action) method. Moreover, make sure that in your config/routes.rb that this is defined as a post route since you are *posting* your data in your Rails ajax request.
+ 
+resources :statics do
+	collection do 		post :retrieve_searches
+	end
+end
+ Now, you may do whatever (on the controller side) you want with the submitted request. Here is what I did with my data in my retrieve_searches method. I used an ElasticSearch search method I had built a few weeks prior to working on this. If you're not using ElasticSearch, I recommend using a basic Rails .search() method.
+ class StaticsController < ApplicationController   def renovated_search
+    @rhs_coches = CocheDato.all.order(:car)
+  end    def retrieve_searches
+    @search_results_posts = CocheDato.suggestSearchCarName(params["SearchPhrase"])
+    respond_to do |format|
+      format.js { render layout: false }
+    end 
+  end  end  For my retrieve_searches.js.erb, you’ll want to escape the javascript and render your _retrieve_searches.html.erb partial like so:   $("#blogpost-table-two").hide();   $("#current_retrieve").html("<%= escape_javascript(render partial: 'statics/retrieve_searches', locals: { search_results_posts: @search_results_posts }) %>");  Then in my _retrieve_searches.html.erb partial, I have this which displays the data that was returned from my ElasticSearch search method called suggestSearchCarName. <table>
+  <thead>
+    <tr>
+      <th>The Name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+     <% @search_results_posts.each do |coche| %>
+      <tr>
+        <td><%= coche.car %></td>
+      </tr>
+     <% end %>
+  </tbody>
+</table>  Thus, refresh your web app if it’s already running or start running your server via `rails s` and wallah! You have a live update in your table as you type in the input!   
+
+
+HashTags:
+- RubyOnRails
+- Ruby
+- LiveSearch
+- Ajax
+
+
+&emsp; Are you interested in having a live update on your data table in your Rails web app as you type into an input field? I was! I groveled around Stackoverflow, the interweb, asking all over Discord for about a week and a half various questions at points where I was stuck. Eventually, I figured it out! So, I wrote this blog in order to help someone else out.  Your live search will look similar to a normal remote: true method in Rails. However, in your HTML view, be sure to use the following input field. I also display my data that will be searched in a table underneath the input tag in <i>app/views/statics/renovated_search.html.erb</i> view file.
+<br>
+<pre>
+	<code>
+		&lt;input type="text" id="renovated_search" name="renovated_search" class="search" value=""&gt;
+
+		&lt;div id="blogpost-table-two"&gt;
+			&lt;table&gt;
+				&lt;thead&gt;
+					&lt;tr&gt;
+						&lt;th&gt;The Name&lt;/th&gt;
+					&lt;/tr&gt;
+				&lt;/thead&gt;
+
+				&lt;tbody&gt;
+					 &lt;% @rhs_coches.each do |coche| %&gt;
+						&lt;tr&gt;
+							&lt;td&gt;&lt;%= coche.car %&gt;&lt;/td&gt;
+						&lt;/tr&gt;
+					 &lt;% end %&gt;
+				&lt;/tbody&gt;
+			&lt;/table&gt;
+		&lt;/div&gt;  
+	</code>
+</pre>
+<br>
+&emsp; I recommend refreshing your page to make sure that it is all working before continuing forward. Next, in your <i>app/javascript/packs/on_key_up_search.js</i>, you will use the jQuery <code>.on()</code> method to attach an event to the input tag that is above. Also, you must use <code>'turbolinks:load'</code> or this function will not load. The method I for detecting each keypress and submitting it to the controller action looks like this:  
+<br><br>
+<pre>
+	<code>
+		$(document).on('turbolinks:load', function() {
+			$('input[name="renovated_search"]').on('keyup', function(event) {
+				var newValue = $("#renovated_search").val();
+
+				var result = null;
+				var dictionary = {}; 
+				var scriptUrl = "/statics/retrieve_searches";
+				var myObj = {"SearchPhrase": newValue};
+
+				Rails.ajax({
+					type: "POST",
+					url: scriptUrl,
+					data: new URLSearchParams(myObj).toString()
+				}); 
+				 
+			}); 
+		});
+	</code>
+</pre>
+<br>
+&emsp; Side note: I tried many times to use a normal jQuery Ajax request. However, I kept running into issues with silent fails for rendering my <i>retrieve_searches.js.erb</i> and partial. Once I switched to the Rails Ajax request, I got instant success. Also, the URLSearchParams translates the key value pairs into a query parameter string.   
+<br><br>
+&emsp; I am posting this method to a Statics (controller) retrieve_searches (action) method. Moreover, make sure that in your <i>config/routes.rb</i> that this is defined as a post route since you are <u>posting</u> your data in your Rails ajax request.
+<br>
+<pre>
+	<code>
+		resources :statics do
+			collection do 		
+				get :renovated_search
+				post :retrieve_searches
+			end
+		end
+	</code>
+</pre>
+<br>
+&emsp; Now, you may do whatever (on the controller side) you want with the submitted request. Here is what I did with my data in my retrieve_searches method. I used an ElasticSearch search method I had built a few weeks prior to working on this. If you're not using ElasticSearch, I recommend using a basic Rails .search() method.
+<br>
+<pre>
+	<code>
+	 class StaticsController < ApplicationController   
+			def renovated_search
+				@rhs_coches = CocheDato.all.order(:car)
+			end    
+			def retrieve_searches
+				@search_results_posts = CocheDato.suggestSearchCarName(params["SearchPhrase"])
+				respond_to do |format|
+					format.js { render layout: false }
+				end 
+			end  
+		end  
+	</code>
+</pre>
+<br>
+&emsp; For my <i>retrieve_searches.js.erb</i>, you’ll want to escape the javascript and render your <i>_retrieve_searches.html.erb</i> partial like so:   
+<br>
+<pre>
+	<code>
+		$("#blogpost-table-two").hide();   
+		$("#current_retrieve").html("<%= escape_javascript(render partial: 'statics/retrieve_searches', locals: { search_results_posts: @search_results_posts }) %>");  
+	</code>
+</pre>
+<br>
+&emsp; Then in my _retrieve_searches.html.erb partial, I have this which displays the data that was returned from my ElasticSearch search method called suggestSearchCarName. 
+<br>
+<pre>
+	<code>
+		&lt;table&gt;
+			&lt;thead&gt;
+				&lt;tr&gt;
+					&lt;th&gt;The Name&lt;/th&gt;
+				&lt;/tr&gt;
+			&lt;/thead&gt;
+
+			&lt;tbody&gt;
+				 &lt;% @search_results_posts.each do |coche| %&gt;
+					&lt;tr&gt;
+						&lt;td&gt;&lt;%= coche.car %&gt;&lt;/td&gt;
+					&lt;/tr&gt;
+				 &lt;% end %&gt;
+			&lt;/tbody&gt;
+		&lt;/table&gt;  
+	</code>
+</pre>
+<br>
+&emsp; Thus, refresh your web app if it’s already running or start running your server via `rails s` and wallah! You have a live update in your table as you type in the input!   
+
